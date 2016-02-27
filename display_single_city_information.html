@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>-->
+    <!--<script type="text/javascript" src="make_image_map_tiles.js"></script>-->
+    <link rel="stylesheet" href="css/global_css.css">
+    <link rel="stylesheet" href="css/city_table_css.css">
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            padding-top: 15px;
+        }
+    </style>
+    <title id="title_of_city"></title>
+</head>
+<body>
+<div class="col-md-4">
+    <table class="table table-condensed" style="border-collapse: collapse" BORDER=3 CELLSPACING=6 CELLPADDING=6>
+        <tr>
+            <td id="city_data" align="center" colspan="4">
+                City Name
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center" id="city_location_insert">City Location</td>
+        </tr>
+        <tr>
+            <td id="pop_insert" colspan="2">Population:</td>
+            <td id="monetary_limit_insert" colspan="2">GP Limit:</td>
+        </tr>
+        <tr>
+            <td colspan="4" id="governtment_type_and_alignment_insert">Government Type :::: Alignment</td>
+        </tr>
+        <tr>
+            <td colspan="4">Government People
+                <ul id="government_insert">
+                    <li>1</li>
+                    <li>2ggggggggggggggggggg</li>
+                    <!--Here is where the data will be made via a unordered list creating function-->
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" id="decription_of_settlement_insert">Here is a description inserted here.Here is a
+                description inserted here.Here is a description inserted here.Here is a description inserted here.Here
+                is a description inserted here.Here is a description inserted here.Here is a description inserted
+                here.Here is a description inserted here.Here is a description inserted here.Here is a description
+                inserted here.Here is a description inserted here.Here is a description inserted here.Here is a
+                description inserted here.Here is a description inserted here.
+            </td>
+        </tr>
+        <!--<tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">-->
+    </table>
+    <div class="col-md-4">
+    <button class="edit_button" onclick="">EDIT INFORMATION</button>
+        <form>
+            <p>City Name:<input type="text" name="city_name" size="6" maxlength="40"/></p>
+            <p>Population:<input type="number" name="city_pop" size="6" maxlength="7"/></p>
+            <p>Country?</p>
+            <select name ="country_dropdown">
+                <option value="scoiatel">Scoia'Tel</option>
+                <option value="gjomatoughariil">Gjomatoughariil</option>
+                <option value="thokklund">Thokklund</option>
+                <option value="lochton">Lochton</option>
+                <option value="denninhdane">Denninhdane</option>
+                <option value="orsim">Orsim</option>
+                <option value="cavalcade">Cavalcade</option>
+                <option value="the_keep">The Keep of The Winds</option>
+                <option value="golau-chi">The Golau-Chi Alliance</option>
+                <option value="wilds">The Wilds</option>
+                <option value="tumultuous">The Tumultuous Lands</option>
+                <option value="endless-sands">The Endless Sands</option>
+            </select>
+            <!--<p>Plus icon on a styled link button:-->
+                <!--<a href="#" class="btn btn-info btn-lg">-->
+                    <!--<span class="glyphicon glyphicon-plus"></span> Plus-->
+                <!--</a>-->
+            <!--</p>-->
+            <table class="table">
+                <tr>
+                    <td colspan="2">Governemental NPCs</td>
+                    <td colspan="1"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><p>NPC Name:<input type="text" name="npc-name"/></p></td>
+                    <td><button><span class="glyphicon glyphicon-plus">More NPCs</span></button></td>
+                </tr>
+                <tr>
+                    <td><button><span class="glyphicon glyphicon-minus">Less NPCs</span></button></td>
+                </tr>
+            </table>
+            <p>Governmental NPCs</p>
+
+
+        </form>
+    </div>
+</div>
+<div class="col-md-4">
+    <table class="table table-condensed" style="border-collapse: collapse" BORDER=3 CELLSPACING=6 CELLPADDING=6>
+        <tr>
+            <td colspan="4" align="center">Local Shops</td>
+        </tr>
+        <tr>
+            <td colspan="2">General
+                <ul id="general_stores_insert">
+                    <li>store</li>
+                </ul>
+            </td>
+            <td colspan="2">
+                Taverns and Others
+                <ul id="taverns_and_others_insert">
+                    <li>store</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                Magic Item Shops
+                <ul id="magic_items_store_insert">
+                    <li>store</li>
+                </ul>
+            </td>
+            <td colspan="2">
+                Weapons and Armor
+                <ul id="weapons_and_armor_insert">
+                    <li>store</li>
+                </ul>
+            </td>
+        </tr>
+
+    </table>
+</div>
+<div class="col-md-4">
+    <table class="table table-condensed" style="border-collapse: collapse" BORDER=3 CELLSPACING=6 CELLPADDING=6>
+        <tr data-toggle="collapse" data-target="#demo1" class="accordian-toggle">
+            <td colspan="2">The Guard
+                <ul id="guard_insert">
+                    <li id="captain_or_sherrif_insert">Sherrif:</li>
+                    <li>FOR TEST</li>
+                    <li>FOR TEST</li>
+                </ul>
+            </td>
+            <td colspan="2">Notable Spellcasters
+                <ul id="spellcaster_insert">
+                    <li>Some Dude!</li>
+                    <li>Some Lady!</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">Imports
+                <ul id="import_insert">
+                    <li>1</li>
+                    <li>2</li>
+                </ul>
+            </td>
+            <td colspan="2">Exports
+                <ul id="export_insert">
+                    <li>1</li>
+                    <li>2</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="col-md-4">
+    <img class="img-thumbnail" src="City%20Maps/Weston.bmp" height="50">
+
+</div>
+<div class = "col-md-4">
+    <img class="img-thumbnail" src="City%20Maps/Weston_and_Environs.png" height="50">
+</div>
+<script>
+    //
+    <!--Here is where the data passed to this will be accessed via session storage-->
+    function display_the_gathered_info() {
+//        var this_date = JSON.parse(localStorage.getItem("a_day_of_data"));
+//        var storm_or_not = this_date.is_a_storm;
+//        var this_date_name = (this_date.date_number) + ", " + (this_date.month_name);
+//        var title = document.getElementById("title_of_day_in_table");
+//        var over_title=document.getElementById("title_of_day");
+//        var low_temp_td = document.getElementById("low_temp_insert");
+//        var high_temp_td = document.getElementById("high_temp_insert");
+//        var precip_type_td = document.getElementById("precip_type_insert");
+//        var precip_amount_td = document.getElementById("precip_amount_insert");
+//        var windspeed_insert_td = document.getElementById("windspeed_insert");
+//        var windspeed_direction_td = document.getElementById("wind_direction_insert");
+//
+//        over_title.innerHTML=this_date_name;
+//        title.innerHTML = this_date_name;
+//        high_temp_td.innerHTML = this_date.high_temprature + " *F";
+//        low_temp_td.innerHTML = this_date.low_temprature + " *F";
+//
+//        precip_type_td.innerHTML = this_date.precipitation_type;
+//
+//        if (this_date.precipitation == 0) {
+//            precip_amount_td.innerHTML = "There was no precipitation this day.";
+//        }
+//        else {
+//            if (storm_or_not == true) {
+//                precip_amount_td.innerHTML = "A storm dropped " + this_date.precipitation + " inches over " + this_date.precipitation_duration + " hours."
+//            }
+//            else {
+//                precip_amount_td.innerHTML = this_date.precipitation + " inches in " + this_date.precipitation_duration + " hours."
+//
+//            }
+//        }
+//        windspeed_insert_td.innerHTML = this_date.windspeed + " Miles Per Hour";
+//        windspeed_direction_td.innerHTML = this_date.wind_direction;
+//        create_and_fill_info_table(this_date.simple_information_to_display);
+////TODO Call another function that creates more rows for table info
+////    sessionStorage.clear()
+//    }
+        function create_and_fill_info_table(data) {
+            var data2 = data;
+            for (var i = 0; i < data2.length; i++) {
+                var pulled_string = data2[i];
+                var newElement = $("<li class='event_info'></li>").text(pulled_string);
+                $("#notes-list").append(newElement);
+            }
+        }
+    }
+</script>
+<script>display_the_gathered_info()</script>
+</body>
+</html>

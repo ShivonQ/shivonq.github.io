@@ -1,0 +1,31 @@
+body{
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    padding-top: 70px;
+    margin:0;
+    background: url(../static_images/parchment3.jpg) repeat;
+}
+
+nav{
+    background:  url(../static_images/sandstone_brick_banner.jpg);
+}
+.navbar-brand{
+    color: burlywood;
+}
+a{
+    color: darkslateblue;
+}
+.nav-link {
+    color: #000;
+}
+.big_title{
+    font-style: italic;
+}
+.city{
+    text-decoration: underline;
+}
+.navbar-nav>li>a {
+    color: #777;
+}
+ul{
+    list-style-type: none;
+}

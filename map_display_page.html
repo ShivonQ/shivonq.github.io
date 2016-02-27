@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+    <script type="text/javascript" src="make_image_map_tiles.js"></script>
+    <link rel="stylesheet" href="css/global_css.css">
+    <meta charset="UTF-8">
+    <div>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div id="navbar" class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="Main%20Page.html">Archaevas Wiki</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="map_display_page.html">Map Page</a></li>
+                    <li><a href="Calendar_Page.html">Calendar</a></li>
+                    <li><a href="#">Major Countries</a></li>
+                    <li><a href="#">Adventuring Parties</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-link"><a href="map_display_page.html">Map Page</a></li>
+                            <li><a href="Calendar_Page.html">Calendar</a></li>
+                            <li><a href="#">Major Countries</a></li>
+                            <li><a href="#">Adventuring Parties</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </div>
+    <style>
+        html, body {
+            height: 400px;
+            width: 600px;
+            margin: 0;
+            /*padding-top: 70px;*/
+        }
+
+        #map {
+            height: 400px;
+            width: 600px;
+            background: palegoldenrod;
+            border: groove cadetblue 12px;
+        }
+    </style>
+    <title>Archaevas Map</title>
+</head>
+<body class="container">
+
+<div id="map">
+
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>-->
+    <!--<script type="text/javascript" src="make_image_map_tiles.js"></script>-->
+    <link rel="stylesheet" href="css/global_css.css">
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            padding-top: 15px;
+        }
+    </style>
+    <title id="title_of_day">Title</title>
+</head>
+<body>
+<div class="col-md-4">
+    <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=8>
+        <tr>
+            <td colspan="4" id="title_of_day_in_table">Days Name</td>
+        </tr>
+        <tr>
+            <td align="right"><b>High Temp:</b></td>
+            <td id="high_temp_insert" align="left">Data Goes Here</td>
+            <td align="right"><b>Low Temp</b></td>
+            <td id="low_temp_insert" align="left">Data Goes Here</td>
+        </tr>
+        <tr>
+            <td align="right"><b>Precipitation Type: </b></td>
+            <td id="precip_type_insert" align="left">Data Goes Here</td>
+            <td align="right"><b>Precipitation Amount:</b></td>
+            <td id="precip_amount_insert" align="left">Data Goes Here</td>
+            <!--Insert Glyphicon of storm if is_a_storm = true-->
+        </tr>
+        <tr>
+            <td align="right"><b>Windspeed:</b></td>
+            <td id="windspeed_insert" align="left">Data Goes Here</td>
+            <td align="right"><b>Wind Direction</b></td>
+            <td id="wind_direction_insert" align="left">Data Goes Here</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <p id="notes"><strong>Notes</strong></p>
+                <ul id="notes-list">
+                </ul>
+            </td>
+        </tr>
+        <!--Here we figure out a way to make the elements for the data list VIA SOME JAVASCRIPT-->
+        <!--A single row of Table with colspan4 per...-->
+    </table>
+</div>
+
+<script>
+    //
+    <!--Here is where the data passed to this will be accessed via local storage-->
+    function display_the_gathered_info() {
+        var this_date = JSON.parse(localStorage.getItem("a_day_of_data"));
+        var storm_or_not = this_date.is_a_storm;
+        var this_date_name = (this_date.date_number) + ", " + (this_date.month_name);
+        var title = document.getElementById("title_of_day_in_table");
+        var over_title=document.getElementById("title_of_day");
+        var high_temp_td = document.getElementById("high_temp_insert");
+        var low_temp_td = document.getElementById("low_temp_insert");
+        var precip_type_td = document.getElementById("precip_type_insert");
+        var precip_amount_td = document.getElementById("precip_amount_insert");
+        var windspeed_insert_td = document.getElementById("windspeed_insert");
+        var windspeed_direction_td = document.getElementById("wind_direction_insert");
+
+        over_title.innerHTML=this_date_name;
+        title.innerHTML = this_date_name;
+        high_temp_td.innerHTML = this_date.high_temprature + " *F";
+        low_temp_td.innerHTML = this_date.low_temprature + " *F";
+
+        precip_type_td.innerHTML = this_date.precipitation_type;
+
+        if (this_date.precipitation == 0) {
+            precip_amount_td.innerHTML = "There was no precipitation this day.";
+        }
+        else {
+            if (storm_or_not == true) {
+                precip_amount_td.innerHTML = "A storm dropped " + this_date.precipitation + " inches over " + this_date.precipitation_duration + " hours."
+            }
+            else {
+                precip_amount_td.innerHTML = this_date.precipitation + " inches in " + this_date.precipitation_duration + " hours."
+
+            }
+        }
+        windspeed_insert_td.innerHTML = this_date.windspeed + " Miles Per Hour";
+        windspeed_direction_td.innerHTML = this_date.wind_direction;
+        create_and_fill_info_table(this_date.simple_information_to_display);
+//TODO Call another function that creates more rows for table info
+//    sessionStorage.clear()
+    }
+    function create_and_fill_info_table(data) {
+        var data2 = data;
+        for (var i = 0; i < data2.length; i++) {
+            var pulled_string = data2[i];
+            var newElement = $("<li class='event_info'></li>").text(pulled_string);
+            $("#notes-list").append(newElement);
+        }
+    }
+</script>
+<script>display_the_gathered_info()</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+.diff_month_day{
+    font-size: x-small;
+    color:gray;
+    /*background-color: darkgray;*/
+}
+.day_spring{
+    color: darkgreen;
+}
+.day_summer{
+    color: darkorange;
+}
+.day_fall{
+    color: saddlebrown;
+}
+.day_winter{
+    color: blue;
+}
+.table{
+    background-color: palegoldenrod;
+}
+.legend_lunar{
+    background-color: darkgray;
+    color: white;
+}
+.legend_winter{
+    background-color: blue;
+    color: white;
+}
+.legend_summer{
+    background-color: darkorange;
+    color: white;
+}
+.legend_spring{
+    background-color: darkgreen;
+    color: white;
+}
+.legend_fall{
+    background-color: saddlebrown;
+    color: white;
+}
+.entire_calendar{
+    float: right;
+}
+.legend{
+    float: left;
+}

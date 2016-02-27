@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--TODO just realizsed that I can write a single JQuery listener on all the TD elements that are for individual days rather than repeating the same onclick solution-->
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/global_css.css">
+    <link rel="stylesheet" href="css/calendar_css.css">
+    <script type="text/javascript" src="javascript_files/day_class.js"></script>
+
+    <title>Calendar of 1336 3rd Age</title>
+    <!--  <script type="text/javascript" src="mainscript.js"></script>-->
+</head>
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div id="navbar" class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="Main%20Page.html">Archaevas Wiki</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li class="nav-link"><a href="map_display_page.html">Map Page</a></li>
+                <li><a href="Calendar_Page.html">Calendar</a></li>
+                <li><a href="Major_Countries.html">Major Countries</a></li>
+                <li><a href="#">Adventuring Parties</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</div>
+<body class="container">
+<div class="main-wrapper">
+    <div id="legend" class="col-sm-2 legend">
+        <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=8>
+            <thead class="thead-inverse">
+            <tr>
+                <td colspan="7" align="center"><B>Calendar Legend</B></td>
+            </tr>
+            </thead>
+            <tr>
+                <td class="legend_lunar" align="center">Lunar Phase<img align="center"
+                                                                        src="static_images/moon_phase_files/moon_phase_15.jpg">
+                </td>
+            </tr>
+            <tr>
+                <td class="legend_winter" align="center">Winter</td>
+            </tr>
+            <tr>
+                <td class="legend_spring" align="center">Spring</td>
+            </tr>
+            <tr>
+                <td class="legend_summer" align="center">Summer</td>
+            </tr>
+            <tr>
+                <td class="legend_fall" align="center">Fall</td>
+            </tr>
+        </table>
+    </div>
+    <div id="entire calendar">
+        <div id="Bethal" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Bethal 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Winter</I></td>
+                </tr>
+
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                </thead>
+                <tr>
+
+                    <td class="diff_month_day" ALIGN=center>28</td>
+                    <td class="diff_month_day" ALIGN=center>29</td>
+                    <td class="diff_month_day" ALIGN=center>30</td>
+                    <td class="day_winter" ALIGN=center onclick="select_element_from_table(this,'Bethal')">1<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_19.jpg"></td>
+                    <td class="day_winter" ALIGN=center>2<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>3<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>4<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+
+                    <td class="day_winter" ALIGN=center>5<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>6<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>7<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>8<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>9<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>10<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_1.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>11<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_2.jpg">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="day_winter" ALIGN=center>12<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_3.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>13<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_4.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>14<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_5.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>15<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_6.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>16<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_7.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>17<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_8.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>18<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_9.jpg">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="day_winter" ALIGN=center>19<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_10.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>20<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_11.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>21<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_12.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>22<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_13.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>23<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_14.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>24<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_15.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>25<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_16.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+
+                    <td class="day_winter" ALIGN=center>26<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_17.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>27<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_18.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>28<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_19.jpg">
+                    </td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                    <td class="diff_month_day" ALIGN=center>3</td>
+                    <td class="diff_month_day" ALIGN=center>4</td>
+                </tr>
+            </table>
+        </div>
+        <div id="Ablamar" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Ablamar 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Beginning of Spring</I></td>
+                </tr>
+
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                </thead>
+                <tr>
+                    <td class="diff_month_day" ALIGN=center>26</td>
+                    <td class="diff_month_day" ALIGN=center>27</td>
+                    <td class="diff_month_day" ALIGN=center>28</td>
+
+                    <td class="day_winter" ALIGN=center>1<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>2<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>3<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>4<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_winter" ALIGN=center>5<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>6<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>7<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>8<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>9<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_1.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>10<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_2.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>11<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_3.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_winter" ALIGN=center>12<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_4.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>13<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_5.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>14<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_6.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>15<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_7.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>16<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_8.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>17<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_9.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>18<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_10.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_winter" ALIGN=center>19<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_11.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>20<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_12.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>21<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_13.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>22<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_14.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>23<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_15.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>24<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_16.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>25<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_17.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_spring" ALIGN=center>26<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_18.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>27<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_19.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>28<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>29<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                    <td class="diff_month_day" ALIGN=center>3</td>
+                </tr>
+            </table>
+        </div>
+        <div id="Maros" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Maros 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Spring</I></td>
+                </tr>
+                </thead>
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                <tr>
+                    <td class="diff_month_day" ALIGN=center>26</td>
+                    <td class="diff_month_day" ALIGN=center>27</td>
+                    <td class="diff_month_day" ALIGN=center>28</td>
+                    <td class="diff_month_day" ALIGN=center>29</td>
+                    <td class="day_spring" ALIGN=center>1<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>2<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>3<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="day_spring" ALIGN=center>4<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>5<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>6<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>7<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_1.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>8<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_2.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>9<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_3.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>10<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_4.jpg">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="day_spring" ALIGN=center>11<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_5.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>12<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_6.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>13<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_7.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>14<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_8.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>15<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_9.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>16<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_10.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>17<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_11.jpg">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="day_spring" ALIGN=center>18<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_12.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>19<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_13.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>20<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_14.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>21<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_15.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>22<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_16.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>23<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_17.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>24<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_18.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="day_spring" ALIGN=center>25<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_19.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>26<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>27<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>28<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>29<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                </tr>
+            </table>
+        </div>
+        <div id="Apnee" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Apnee 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Spring</I></td>
+                </tr>
+                </thead>
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                <tr>
+                    <td class="diff_month_day" ALIGN=center>25</td>
+                    <td class="diff_month_day" ALIGN=center>26</td>
+                    <td class="diff_month_day" ALIGN=center>27</td>
+                    <td class="diff_month_day" ALIGN=center>28</td>
+                    <td class="diff_month_day" ALIGN=center>29</td>
+                    <td class="day_spring" ALIGN=center>1<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>2<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_spring" ALIGN=center>3<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>4<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>5<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_1.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>6<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_2.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>7<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_3.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>8<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_4.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>9<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_5.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_spring" ALIGN=center>10<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_6.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>11<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_7.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>12<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_8.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>13<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_9.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>14<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_10.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>15<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_11.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>16<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_12.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_spring" ALIGN=center>17<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_13.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>18<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_14.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>19<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_15.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>20<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_16.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>21<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_17.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>22<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_18.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>23<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_19.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_spring" ALIGN=center>24<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>25<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>26<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>27<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                    <td class="diff_month_day" ALIGN=center>3</td>
+                </tr>
+            </table>
+        </div>
+        <div id="Duril" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Duril 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Beginning of Summer</I></td>
+                </tr>
+                </thead>
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                <tr>
+                    <td class="diff_month_day" ALIGN=center>24</td>
+                    <td class="diff_month_day" ALIGN=center>25</td>
+                    <td class="diff_month_day" ALIGN=center>26</td>
+                    <td class="diff_month_day" ALIGN=center>27</td>
+                    <td class="day_spring" ALIGN=center>1<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>2<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>3<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_spring" ALIGN=center>4<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>5<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_1.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>6<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_2.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>7<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_3.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>8<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_4.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>9<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_5.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>10<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_6.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_spring" ALIGN=center>11<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_7.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>12<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_8.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>13<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_9.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>14<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_10.jpg">
+                    </td>
+                    <td class="day_spring" ALIGN=center>15<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_11.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>16<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_12.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>17<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_13.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>18<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_14.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>19<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_15.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>20<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_16.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>21<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_17.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>22<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_18.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>23<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_19.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>24<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>25<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>26<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>27<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>28<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                    <td class="diff_month_day" ALIGN=center>3</td>
+                </tr>
+            </table>
+        </div>
+        <div id="Lovoth" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Lovoth 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Summer</I></td>
+                </tr>
+                </thead>
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                <tr>
+                    <td class="diff_month_day" ALIGN=center>25</td>
+                    <td class="diff_month_day" ALIGN=center>26</td>
+                    <td class="diff_month_day" ALIGN=center>27</td>
+                    <td class="diff_month_day" ALIGN=center>28</td>
+                    <td class="day_summer" ALIGN=center>1<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>2<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>3<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>4<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_1.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>5<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_2.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>6<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_3.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>7<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_4.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>8<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_5.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>9<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_6.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>10<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_7.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>11<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_8.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>12<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_9.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>13<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_10.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>14<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_11.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>15<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_12.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>16<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_13.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>17<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_14.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>18<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_15.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>19<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_16.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>20<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_17.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>21<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_18.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>22<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_19.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>23<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>24<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>25<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>26<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>27<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>28<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                    <td class="diff_month_day" ALIGN=center>3</td>
+                </tr>
+            </table>
+        </div>
+        <div id="Lamorick" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Lamorick 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Summer</I></td>
+                </tr>
+                </thead>
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                <tr>
+                    <td class="diff_month_day" ALIGN=center>25</td>
+                    <td class="diff_month_day" ALIGN=center>26</td>
+                    <td class="diff_month_day" ALIGN=center>27</td>
+                    <td class="diff_month_day" ALIGN=center>28</td>
+                    <td class="day_summer" ALIGN=center>1<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>2<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>3<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_1.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>4<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_2.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>5<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_3.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>6<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_4.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>7<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_5.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>8<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_6.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>9<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_7.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>10<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_8.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>11<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_9.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>12<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_10.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>13<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_11.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>14<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_12.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>15<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_13.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>16<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_14.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>17<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_15.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>18<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_16.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>19<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_17.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>20<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_18.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>21<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_19.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>22<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>23<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>24<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>25<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>26<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>27<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>28<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                    <td class="diff_month_day" ALIGN=center>3</td>
+                </tr>
+            </table>
+        </div>
+        <div id="Oreth" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Oreth 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Summer</I></td>
+                </tr>
+                </thead>
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                <tr>
+                    <td class="diff_month_day" ALIGN=center>25</td>
+                    <td class="diff_month_day" ALIGN=center>26</td>
+                    <td class="diff_month_day" ALIGN=center>27</td>
+                    <td class="diff_month_day" ALIGN=center>28</td>
+                    <td class="day_summer" ALIGN=center>1<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>2<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_1.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>3<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_2.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>4<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_3.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>5<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_4.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>6<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_5.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>7<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_6.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>8<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_7.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>9<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_8.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>10<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_9.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>11<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_10.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>12<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_11.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>13<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_12.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>14<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_13.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>15<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_14.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>16<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_15.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>17<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_16.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>18<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_17.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>19<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_18.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>20<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_19.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>21<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>22<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>23<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>24<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>25<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>26<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>27<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>28<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                    <td class="diff_month_day" ALIGN=center>3</td>
+                </tr>
+            </table>
+        </div>
+        <div id="Welcar" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Welcar 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Beginning of Fall</I></td>
+                </tr>
+
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                </thead>
+                <tr>
+                    <td class="diff_month_day" ALIGN=center>25</td>
+                    <td class="diff_month_day" ALIGN=center>26</td>
+                    <td class="diff_month_day" ALIGN=center>27</td>
+                    <td class="diff_month_day" ALIGN=center>28</td>
+                    <td class="day_summer" ALIGN=center>1<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_1.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>2<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_2.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>3<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_3.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_summer" ALIGN=center>4<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_4.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>5<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_5.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>6<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_6.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>7<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_7.jpg">
+                    </td>
+                    <td class="day_summer" ALIGN=center>8<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_8.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>9<img align="right"
+                                                            src="static_images/moon_phase_files/moon_phase_9.jpg"></td>
+                    <td class="day_fall" ALIGN=center>10<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_10.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_fall" ALIGN=center>11<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_11.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>12<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_12.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>13<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_13.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>14<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_14.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>15<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_15.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>16<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_16.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>17<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_17.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_fall" ALIGN=center>18<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_18.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>19<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_19.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>20<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>21<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>22<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>23<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>24<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_fall" ALIGN=center>25<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>26<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>27<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>28<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_1.jpg"></td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                    <td class="diff_month_day" ALIGN=center>3</td>
+                </tr>
+            </table>
+        </div>
+        <div id="Svana" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Svana 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Fall</I></td>
+                </tr>
+
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                </thead>
+                <tr>
+                    <td class="diff_month_day" ALIGN=center>25</td>
+                    <td class="diff_month_day" ALIGN=center>26</td>
+                    <td class="diff_month_day" ALIGN=center>27</td>
+                    <td class="diff_month_day" ALIGN=center>28</td>
+                    <td class="day_fall" ALIGN=center>1<img align="right"
+                                                            src="static_images/moon_phase_files/moon_phase_2.jpg"></td>
+                    <td class="day_fall" ALIGN=center>2<img align="right"
+                                                            src="static_images/moon_phase_files/moon_phase_3.jpg"></td>
+                    <td class="day_fall" ALIGN=center>3<img align="right"
+                                                            src="static_images/moon_phase_files/moon_phase_4.jpg"></td>
+
+                </tr>
+                <tr>
+                    <td class="day_fall" ALIGN=center>4<img align="right"
+                                                            src="static_images/moon_phase_files/moon_phase_5.jpg"></td>
+                    <td class="day_fall" ALIGN=center>5<img align="right"
+                                                            src="static_images/moon_phase_files/moon_phase_6.jpg"></td>
+                    <td class="day_fall" ALIGN=center>6<img align="right"
+                                                            src="static_images/moon_phase_files/moon_phase_7.jpg"></td>
+                    <td class="day_fall" ALIGN=center>7<img align="right"
+                                                            src="static_images/moon_phase_files/moon_phase_8.jpg"></td>
+                    <td class="day_fall" ALIGN=center>8<img align="right"
+                                                            src="static_images/moon_phase_files/moon_phase_9.jpg"></td>
+                    <td class="day_fall" ALIGN=center>9<img align="right"
+                                                            src="static_images/moon_phase_files/moon_phase_10.jpg"></td>
+                    <td class="day_fall" ALIGN=center>10<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_11.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_fall" ALIGN=center>11<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_12.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>12<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_13.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>13<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_14.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>14<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_15.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>15<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_16.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>16<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_17.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>17<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_18.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_fall" ALIGN=center>18<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_19.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>19<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>20<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>21<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>22<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>23<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>24<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="day_fall" ALIGN=center>25<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>26<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+                    <td class="day_fall" ALIGN=center>27<img align="right"
+                                                             src="static_images/moon_phase_files/moon_phase_1.jpg"></td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                    <td class="diff_month_day" ALIGN=center>3</td>
+                    <td class="diff_month_day" ALIGN=center>4</td>
+                </tr>
+            </table>
+        </div>
+        <div id="Ponj" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Ponj 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Fall</I></td>
+                </tr>
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                </thead>
+                <tr>
+                    <td class="diff_month_day" ALIGN=center>25</td>
+                    <td class="diff_month_day" ALIGN=center>26</td>
+                    <td class="diff_month_day" ALIGN=center>27</td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">1<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_2.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">2<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_3.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">3<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_4.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">4<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_5.jpg"></td>
+                </tr>
+                <tr>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">5<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_6.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">6<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_7.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">7<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_8.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">8<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_9.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">9<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_10.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">10<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_11.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">11<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_12.jpg"></td>
+                </tr>
+                <tr>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">12<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_13.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">13<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_14.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">14<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_15.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">15<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_16.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">16<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_17.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">17<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_18.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">18<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_19.jpg"></td>
+                </tr>
+                <tr>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">19<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_20.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">20<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_21.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">21<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_22.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">22<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_23.jpg"></td>
+                    <td class="day_fall" ALIGN=center onclick="select_element_from_table(this,'Ponj')">23<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_24.jpg"></td>
+                    <td class="day_winter" ALIGN=center onclick="select_element_from_table(this,'Ponj')">24<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_25.jpg"></td>
+                    <td class="day_winter" ALIGN=center onclick="select_element_from_table(this,'Ponj')">25<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_26.jpg"></td>
+                </tr>
+                <tr>
+                    <td class="day_winter" ALIGN=center onclick="select_element_from_table(this,'Ponj')">26<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_27.jpg"></td>
+                    <td class="day_winter" ALIGN=center onclick="select_element_from_table(this,'Ponj')">27<img
+                            align="right" src="static_images/moon_phase_files/moon_phase_1.jpg"></td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                    <td class="diff_month_day" ALIGN=center>3</td>
+                    <td class="diff_month_day" ALIGN=center>4</td>
+                    <td class="diff_month_day" ALIGN=center>5</td>
+                </tr>
+            </table>
+        </div>
+        <div id="Quindahl" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Quindahl 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Beginning of Winter</I></td>
+                </tr>
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                </thead>
+                <tr>
+                    <td class="diff_month_day" ALIGN=center>26</td>
+                    <td class="diff_month_day" ALIGN=center>27</td>
+                    <td class="day_winter" ALIGN=center>1<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_2.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>2<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_3.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>3<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_4.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>4<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_5.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>5<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_6.jpg">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="day_winter" ALIGN=center>6<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_7.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>7<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_8.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>8<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_9.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>9<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_10.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>10<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_11.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>11<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_12.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>12<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_13.jpg">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="day_winter" ALIGN=center>13<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_14.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>14<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_15.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>15<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_16.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>16<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_17.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>17<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_18.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>18<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_19.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>19<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="day_winter" ALIGN=center>20<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>21<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>22<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>23<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>24<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>25<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>26<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="day_winter" ALIGN=center>27<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_1.jpg">
+                    </td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                    <td class="diff_month_day" ALIGN=center>3</td>
+                    <td class="diff_month_day" ALIGN=center>4</td>
+                    <td class="diff_month_day" ALIGN=center>5</td>
+                    <td class="diff_month_day" ALIGN=center>6</td>
+                </tr>
+            </table>
+        </div>
+        <div id="Rentar" class="col-md-4 calendar_month">
+            <table class="table" BORDER=3 CELLSPACING=3 CELLPADDING=15>
+                <thead class="thead-inverse">
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><B>Rentar 1336 3<sup>rd</sup> Age</B></td>
+                </tr>
+                <tr>
+                    <td COLSPAN="7" ALIGN=center><I>Winter</I></td>
+                </tr>
+                <tr>
+                    <td ALIGN=center>Sun</td>
+                    <td ALIGN=center>Mon</td>
+                    <td ALIGN=center>Tue</td>
+                    <td ALIGN=center>Wed</td>
+                    <td ALIGN=center>Thu</td>
+                    <td ALIGN=center>Fri</td>
+                    <td ALIGN=center>Sat</td>
+                </tr>
+                </thead>
+                <tr>
+                    <td class="diff_month_day" ALIGN=center>27</td>
+                    <td class="day_winter" ALIGN=center>1<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_2.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>2<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_3.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>3<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_4.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>4<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_5.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>5<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_6.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>6<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_7.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="day_winter" ALIGN=center>7<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_8.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>8<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_9.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>9<img align="right"
+                                                              src="static_images/moon_phase_files/moon_phase_10.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>10<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_11.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>11<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_12.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>12<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_13.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>13<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_14.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="day_winter" ALIGN=center>14<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_15.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>15<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_16.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>16<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_17.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>17<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_18.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>18<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_19.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>19<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_20.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>20<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_21.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="day_winter" ALIGN=center>21<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_22.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>22<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_23.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>23<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_24.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>24<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_25.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>25<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_26.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>26<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_27.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>27<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_1.jpg">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="day_winter" ALIGN=center>28<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_2.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>29<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_3.jpg">
+                    </td>
+                    <td class="day_winter" ALIGN=center>30<img align="right"
+                                                               src="static_images/moon_phase_files/moon_phase_4.jpg">
+                    </td>
+                    <td class="diff_month_day" ALIGN=center>1</td>
+                    <td class="diff_month_day" ALIGN=center>2</td>
+                    <td class="diff_month_day" ALIGN=center>3</td>
+                    <td class="diff_month_day" ALIGN=center>4</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    function select_element_from_table(element, month_name) {
+        localStorage.clear();
+//        sessionStorage.clear();
+        var check_for_pointy_bracket = "<";
+        var string_of_element_inner_HTML = element.innerHTML[0] + element.innerHTML[1];
+        if (string_of_element_inner_HTML.indexOf(check_for_pointy_bracket) > -1) {
+            string_of_element_inner_HTML = element.innerHTML[0];
+        }
+        else {
+        }
+//        alert ('the innerHTML is '+string_of_element_inner_HTML+" month-name: "+month_name);
+        var single_day_data_OBJECT_to_pass = month_of_ponj[string_of_element_inner_HTML];
+        localStorage.setItem("a_day_of_data", JSON.stringify(single_day_data_OBJECT_to_pass));
+//        sessionStorage.setItem("a_day_of_data",JSON.stringify(single_day_data_OBJECT_to_pass));
+        var url = 'display_single_day_information.html';
+        newwindow = null;
+        try {
+            newwindow.close();
+        }
+        catch (Exception) {
+
+        }
+
+        newwindow = window.open(url, 'Date Information', 'height=400,width=650');
+        if (window.focus) {
+            newwindow.focus()
+        }
+        return false;
+    }
+</script>
+</body>
+</html>

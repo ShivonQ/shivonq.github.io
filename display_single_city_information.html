@@ -105,13 +105,13 @@
         <tr>
             <td colspan="2">General
                 <ul id="general_stores_insert">
-                    <li>store</li>
+
                 </ul>
             </td>
             <td colspan="2">
                 Taverns and Others
                 <ul id="taverns_and_others_insert">
-                    <li>store</li>
+
                 </ul>
             </td>
         </tr>
@@ -119,13 +119,13 @@
             <td colspan="2">
                 Magic Item Shops
                 <ul id="magic_items_store_insert">
-                    <li>store</li>
+
                 </ul>
             </td>
             <td colspan="2">
                 Weapons and Armor
                 <ul id="weapons_and_armor_insert">
-                    <li>store</li>
+
                 </ul>
             </td>
         </tr>
@@ -234,50 +234,18 @@
                 $("#weapons_and_armor_insert").append(another_element)
             }
         }
-        function build_general_stores(array){
+        function build_magic_items(array){
             for(var i=0;i<array.length;i++){
                 var shop_name = array[i];
                 var another_element = $("<li class='list_item'></li>").text(shop_name);
-                $("#general_stores_insert").append(another_element)
+                $("#magic_items_store_insert").append(another_element)
             }
         }
         build_gov_npcs(array_of_gov_workers);
-
-
-        function shop_filler(these_stores){
-            for (var i = 0; i<these_stores.length;i++){
-                var a_string= these_stores[i];
-                for (var j = 0; j<these_stores[a_string].length;j++ ){
-
-                }
-            }
-        }
-//        if (this_date.precipitation == 0) {
-//            precip_amount_td.innerHTML = "There was no precipitation this day.";
-//        }
-//        else {
-//            if (storm_or_not == true) {
-//                precip_amount_td.innerHTML = "A storm dropped " + this_date.precipitation + " inches over " + this_date.precipitation_duration + " hours."
-//            }
-//            else {
-//                precip_amount_td.innerHTML = this_date.precipitation + " inches in " + this_date.precipitation_duration + " hours."
-//
-//            }
-//        }
-//        windspeed_insert_td.innerHTML = this_date.windspeed + " Miles Per Hour";
-//        windspeed_direction_td.innerHTML = this_date.wind_direction;
-//        create_and_fill_info_table(this_date.simple_information_to_display);
-////TODO Call another function that creates more rows for table info
-////    sessionStorage.clear()
-//    }
-        function create_and_fill_info_table(data) {
-            var data2 = data;
-            for (var i = 0; i < data2.length; i++) {
-                var pulled_string = data2[i];
-                var newElement = $("<li class='event_info'></li>").text(pulled_string);
-                $("#notes-list").append(newElement);
-            }
-        }
+        build_general_stores(array_general_stores);
+        build_taverns_and_others(array_others);
+        build_weps_and_armor(array_weps_and_armor);
+        build_magic_items(array_magic_items);
     }
 </script>
 </body>

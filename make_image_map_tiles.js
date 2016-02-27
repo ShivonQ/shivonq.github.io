@@ -27,7 +27,7 @@ function initMap() {
 
             //return 'file://localhost:3010/static/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg";
             //return 'file://localhost/C:/Users/School/WebstormProjects/Project_1/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg"
-            return 'file///https://github.com/ShivonQ/shivonq.github.io/blob/master/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg";
+            return '/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg";
         },
         tileSize:
             new google.maps.Size(538,433),

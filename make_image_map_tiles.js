@@ -16,10 +16,10 @@ function initMap() {
         }
     });
     google.maps.event.addListener(map,"click",function(event){
-        var clickLat = event.latlng.lat();
-        var clickLon = event.latlng.lng();
+        var clickLat = event.lat();
+        var clickLon = event.lng();
         document.getElementById("lat_display").innerHTML=clickLat.toFixed(5);
-        document.getElementById("lng_display").innerHTML=clickLat.toFixed(5);
+        document.getElementById("lng_display").innerHTML=clickLon.toFixed(5);
     });
     var archaevasMapType=new google.maps.ImageMapType({
         getTileUrl: function(coord,zoom){

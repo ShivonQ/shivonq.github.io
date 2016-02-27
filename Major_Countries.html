@@ -127,8 +127,8 @@
     <div id="Golau-chi">
         <h3>The Golau-Chi Alliance</h3>
         <ul>
-            <li class="city sub_capital"><a href="#"><h4>Golauk (*)</h4></span></a> </li>
-            <li class="city sub_capital"><a href="#"><h4>Chibblah (*)</h4></span></a> </li>
+            <li class="city sub_capital"><a href="#"><h4>Golauk (*)</h4></a> </li>
+            <li class="city sub_capital"><a href="#"><h4>Chibblah (*)</h4></a> </li>
             <li class="city sub_capital"><a href="#"><h4>Tyrellia (*)</h4></a> </li>
             <li class="city"><a href="#"><h4>Gerstill</h4></a> </li>
             <li class="city"><a href="#"><h4>Prillanor</h4></a> </li>
@@ -139,26 +139,26 @@
     <div id="Wilds">
         <h3>The Wilds</h3>
         <ul>
-            <li class="city sub_capital"><a href="#"><h4>Kopak</h4> <span class="glyphicon glyphicon-star-empty"></span></a> </li>
-            <li class="city sub_capital"><a href="#"><h4>Meshaq</h4><span class="glyphicon glyphicon-star-empty"></span> </a> </li>
-            <li class="city sub_capital"><a href="#"><h4>Weston</h4><span class="glyphicon glyphicon-star-empty"></span> </a> </li>
+            <li class="city sub_capital"><a href="#"><h4>Kopak</h4> </a> </li>
+            <li class="city sub_capital"><a href="#"><h4>Meshaq</h4> </a> </li>
+            <li class="city sub_capital" ><a href="#"><h4 onclick="grab_city_data(this)">Weston</h4> </a> </li>
             <li class="city"><a href="#"><h4>Gunud Inbar: West</h4> </a> </li>
-             <span class="glyphicon glyphicon-star-empty"></span>
+
         </ul>
     </div>
     <div id="Tumultous">
         <h3>The Tumultous Lands</h3>
         <ul>
             <li class="city "><a href="#"><h4>Nomad Tribes</h4></a> </li>
-            <li class="city sub_capital"><a href="#"><h4>Xiekivi</h4><span class="glyphicon glyphicon-star-empty"></span></a> </li>
-            <li class="city sub_capital"><a href="#"><h4>Osbrire<span class="glyphicon glyphicon-star-empty"></span></h4></a> </li>
+            <li class="city sub_capital"><a href="#"><h4>Xiekivi</h4></a> </li>
+            <li class="city sub_capital"><a href="#"><h4>Osbrire</h4></a> </li>
         </ul>
     </div>
     <div id="sands">
         <h3>The Endless Sands</h3>
         <ul>
             <li class="city"><a href="#"><h4>Karkopey</h4></a> </li>
-            <li class="city sub_capital"><a href="#"><h4>Baastruuf on The Delta</h4><span class="glyphicon glyphicon-star-empty"></span></a> </li>
+            <li class="city sub_capital"><a href="#"><h4>Baastruuf on The Delta</h4></span></a> </li>
             <li class="city"><a href="#"><h4>Kissan Otan Deg: East</h4></a> </li>
         </ul>
     </div>
@@ -166,11 +166,12 @@
 </div>
 <script>
     function grab_city_data(element){
-        loc
+        var name_of_settlement=element.innerHTML;
+        alert(name_of_settlement)
     }
 </script>
 <script>
-    function select_element_from_table(element, month_name) {
+    function select_element_from_table(element) {
         localStorage.clear();
 //        sessionStorage.clear();
         var check_for_pointy_bracket = "<";

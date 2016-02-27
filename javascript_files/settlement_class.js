@@ -70,4 +70,6 @@ Weston.general_description_of_settlement="Weston is a small town of nearly four 
 Weston.city_map="City Maps/Weston.bmp";
 Weston.local_map="City Maps/Weston_and_Environs.png";
 
+Weston.latitude=39.16414;
+Weston.longitude=126.56250;
 

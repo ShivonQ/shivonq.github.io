@@ -25,8 +25,8 @@ function initMap() {
         //    C:\Users\School\Downloads\Archaevian Midlands 7 Maptiles
         //    todo this didnt work either, tried running a node server to use it. didnt work
 
-            return 'file://localhost:3010/static/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg";
-            //return 'file://localhost/C:/Users/School/WebstormProjects/Project_1/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg"
+            //return 'file://localhost:3010/static/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg";
+            return 'file://localhost/C:/Users/School/WebstormProjects/Project_1/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg"
         },
         tileSize:
             new google.maps.Size(538,433),

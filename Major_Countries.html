@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="css/global_css.css">
-
+    <script type="text/javascript" src="javascript_files/settlement_class.js"></script>
     <title>Major Countries of Archaevas</title>
     <!--  <script type="text/javascript" src="mainscript.js"></script>-->
 </head>
@@ -167,34 +167,18 @@
 <script>
     function grab_city_data(element){
         var name_of_settlement=element.innerHTML;
-        alert(name_of_settlement)
-    }
-</script>
-<script>
-    function select_element_from_table(element) {
-        localStorage.clear();
-//        sessionStorage.clear();
-        var check_for_pointy_bracket = "<";
-        var string_of_element_inner_HTML = element.innerHTML[0] + element.innerHTML[1];
-        if (string_of_element_inner_HTML.indexOf(check_for_pointy_bracket) > -1) {
-            string_of_element_inner_HTML = element.innerHTML[0];
-        }
-        else {
-        }
-//        alert ('the innerHTML is '+string_of_element_inner_HTML+" month-name: "+month_name);
-        var single_day_data_OBJECT_to_pass = month_of_ponj[string_of_element_inner_HTML];
-        localStorage.setItem("a_day_of_data", JSON.stringify(single_day_data_OBJECT_to_pass));
-//        sessionStorage.setItem("a_day_of_data",JSON.stringify(single_day_data_OBJECT_to_pass));
-        var url = 'display_single_day_information.html';
-        newwindow = null;
-        try {
+        var this_city=all_settlements[name_of_settlement];
+
+        localStorage.setItem("City_Data",JSON.stringify(this_city));
+        var url = 'display_single_city_information.html';
+        newwindow=null;
+        try{
             newwindow.close();
         }
-        catch (Exception) {
+        catch (Exception){
 
         }
-
-        newwindow = window.open(url, 'Date Information', 'height=400,width=650');
+        newwindow=window.open(url,name_of_settlement,'height=800,width=800');
         if (window.focus) {
             newwindow.focus()
         }

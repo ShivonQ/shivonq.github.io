@@ -16,11 +16,11 @@
     </style>
     <title id="title_of_city"></title>
 </head>
-<body>
+<body onload="display_the_gathered_info()">
 <div class="col-md-4">
     <table class="table table-condensed" style="border-collapse: collapse" BORDER=3 CELLSPACING=6 CELLPADDING=6>
         <tr>
-            <td id="city_data" align="center" colspan="4">
+            <td id="city_name" align="center" colspan="4">
                 City Name
             </td>
         </tr>
@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <td id="pop_insert" colspan="2">Population:</td>
-            <td id="monetary_limit_insert" colspan="2">GP Limit:</td>
+            <td id="gp_limit_insert" colspan="2">GP Limit:</td>
         </tr>
         <tr>
             <td colspan="4" id="governtment_type_and_alignment_insert">Government Type :::: Alignment</td>
@@ -43,7 +43,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="4" id="decription_of_settlement_insert">Here is a description inserted here.Here is a
+            <td colspan="4" id="description_of_settlement_insert">Here is a description inserted here.Here is a
                 description inserted here.Here is a description inserted here.Here is a description inserted here.Here
                 is a description inserted here.Here is a description inserted here.Here is a description inserted
                 here.Here is a description inserted here.Here is a description inserted here.Here is a description
@@ -138,8 +138,8 @@
             <td colspan="2">The Guard
                 <ul id="guard_insert">
                     <li id="captain_or_sherrif_insert">Sherrif:</li>
-                    <li>FOR TEST</li>
-                    <li>FOR TEST</li>
+                    <li id="guard_numbers">FOR TEST</li>
+                    <li id="militia_numbers">FOR TEST</li>
                 </ul>
             </td>
             <td colspan="2">Notable Spellcasters
@@ -167,34 +167,91 @@
 </div>
 <div class="col-sm-4">
     <img class="img-thumbnail city_map" src="City%20Maps/Weston.bmp" width="200">
-
-</div>
-<div class = "col-sm-4">
     <img class="img-thumbnail" src="City%20Maps/Weston_and_Environs.png" width="200">
 </div>
 <script>
     //
     <!--Here is where the data passed to this will be accessed via session storage-->
     function display_the_gathered_info() {
-//        var this_date = JSON.parse(localStorage.getItem("a_day_of_data"));
-//        var storm_or_not = this_date.is_a_storm;
-//        var this_date_name = (this_date.date_number) + ", " + (this_date.month_name);
-//        var title = document.getElementById("title_of_day_in_table");
-//        var over_title=document.getElementById("title_of_day");
-//        var low_temp_td = document.getElementById("low_temp_insert");
-//        var high_temp_td = document.getElementById("high_temp_insert");
-//        var precip_type_td = document.getElementById("precip_type_insert");
-//        var precip_amount_td = document.getElementById("precip_amount_insert");
-//        var windspeed_insert_td = document.getElementById("windspeed_insert");
-//        var windspeed_direction_td = document.getElementById("wind_direction_insert");
-//
-//        over_title.innerHTML=this_date_name;
-//        title.innerHTML = this_date_name;
-//        high_temp_td.innerHTML = this_date.high_temprature + " *F";
-//        low_temp_td.innerHTML = this_date.low_temprature + " *F";
-//
-//        precip_type_td.innerHTML = this_date.precipitation_type;
-//
+        var this_city=JSON.parse(localStorage.getItem("City_Data"));
+        var dict_of_npc_with_authority=this_city.authority_figures;
+
+        var array_of_gov_workers=this_city.authority_figures["Governmental"];
+        var sherriff=this_city.authority_figures["Guard Captain"];
+        var array_of_spellcasters=this_city.authority_figures["Notable Spellcasters"];
+
+        var imports=this_city.major_imports;
+        var exports=this_city.major_exports;
+
+        var dict_of_local_stores=this_city.local_stores;
+        var array_general_stores=this_city.local_stores["General Stores"];
+        var array_weps_and_armor=this_city.local_stores["Weapons & Armor"];
+        var array_magic_items=this_city.local_stores["Magic Items"];
+        var array_others=this_city.local_stores["Other Vendors"];
+        var dict_of_knowledge_local=this_city.knowledge_local_information;
+
+        var lat=this_city.latitude;
+        var lng=this_city.longitude;
+
+        document.getElementById("city_name").innerHTML=this_city.name;
+        document.getElementById("title_of_city").innerHTML=this_city.name;
+        document.getElementById("city_location_insert").innerHTML=this_city.country_or_area;
+        document.getElementById("pop_insert").innerHTML="Population: "+this_city.population;
+        document.getElementById("gp_limit_insert").innerHTML="GP Limit:"+this_city.money_limit+"gp";
+        document.getElementById("governtment_type_and_alignment_insert").innerHTML=this_city.power_center_in_community+"::::"+this_city.power_center_alignement;
+        document.getElementById("description_of_settlement_insert").innerHTML=this_city.general_description_of_settlement;
+
+        document.getElementById("captain_or_sherrif_insert").innerHTML=this_city.authority_figures["Guard Captain"];
+        document.getElementById("guard_numbers").innerHTML="Members of the Guard: "+this_city.city_guards;
+        document.getElementById("militia_numbers").innerHTML="Members of the Militia: "+this_city.city_militia;
+
+
+        function build_gov_npcs(array) {
+            for (var i = 0; i < array.length; i++) {
+                var npc_name = array[i];
+                var another_element = $("<li class='list_item'></li>").text(npc_name);
+                $("#government_insert").append(another_element);
+            }
+        }
+        function build_general_stores(array){
+            for(var i=0;i<array.length;i++){
+                var shop_name = array[i];
+                var another_element = $("<li class='list_item'></li>").text(shop_name);
+                $("#general_stores_insert").append(another_element)
+            }
+        }
+        function build_taverns_and_others(array){
+            for(var i=0;i<array.length;i++){
+                var shop_name = array[i];
+                var another_element = $("<li class='list_item'></li>").text(shop_name);
+                $("#taverns_and_others_insert").append(another_element)
+            }
+        }
+        function build_weps_and_armor(array){
+            for(var i=0;i<array.length;i++){
+                var shop_name = array[i];
+                var another_element = $("<li class='list_item'></li>").text(shop_name);
+                $("#weapons_and_armor_insert").append(another_element)
+            }
+        }
+        function build_general_stores(array){
+            for(var i=0;i<array.length;i++){
+                var shop_name = array[i];
+                var another_element = $("<li class='list_item'></li>").text(shop_name);
+                $("#general_stores_insert").append(another_element)
+            }
+        }
+        build_gov_npcs(array_of_gov_workers);
+
+
+        function shop_filler(these_stores){
+            for (var i = 0; i<these_stores.length;i++){
+                var a_string= these_stores[i];
+                for (var j = 0; j<these_stores[a_string].length;j++ ){
+
+                }
+            }
+        }
 //        if (this_date.precipitation == 0) {
 //            precip_amount_td.innerHTML = "There was no precipitation this day.";
 //        }
@@ -223,6 +280,5 @@
         }
     }
 </script>
-<script>display_the_gathered_info()</script>
 </body>
 </html>

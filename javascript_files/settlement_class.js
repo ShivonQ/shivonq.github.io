@@ -14,8 +14,8 @@ var Settlement_Data=function(){
     this.power_center_alignement="";
     this.authority_figures={"Governmental":[],"Guard Captain":[],"Notable Spellcasters":[]};
 
-    this.city_guards=(this.population*0.01);
-    this.city_militia=(this.population*0.05);
+    this.city_guards=(this.population*0.01).toFixed(0);
+    this.city_militia=(this.population*0.05).toFixed(0);
     this.major_exports=[];
     this.major_imports=[];
     this.local_stores={"General Stores":[],"Weapons & Armor":[],"Magic Items":[],"Other Vendors":[]};
@@ -41,7 +41,8 @@ Weston.power_center_alignement="Chaotic Good";
 
 Weston.authority_figures={"Governmental":["Mar the Hobgoblin","Amelia Nemoren","Nurse Practitioner Lorga","Aniel","Onemrious Olurba","Ketham Waterwalker","Socratea daughter of Kopak"],
     "Guard Captain":["Renault Raegelaeine"],"Notable Spellcasters":["Ka-ah Bentini","Halvard Tillert","Nurse Practitioner Lorga","Darinthrall Shann","Ichraeme The Stout"]};
-
+Weston.city_guards=((Weston.population*0.01)+10).toFixed(0);
+Weston.city_militia=((Weston.population*0.05+20)).toFixed(0);
 Weston.major_exports=["Cider","Beer","Jewelry","Magic Items"];
 Weston.major_imports=["Precious Metals","Gems","Iron","Copper","Farming Implements","Exotic Animals"];
 
@@ -63,7 +64,7 @@ Weston.general_description_of_settlement="Weston is a small town of nearly four 
     "It was first established long before the roads were there, in the first age of the world.  " +
     "During the Hobgoblin wars throughout the Westwood Kragor NeMoren single handedly slew an entire battalion allowing the Raegalaeine elves, and the Shanns to annihilate the larger force." +
     "It has old stone fortifications that had fallen into disrepair when the town was cursed." +
-    "The Blue Feet of Weston invested a large quantity of money intot he town to bring these fortifications back from their terrible state." +
+    "\nThe Blue Feet of Weston invested a large quantity of money intot he town to bring these fortifications back from their terrible state." +
     "Nemoren Manor sits atop a small hill near the center of town." +
     "The River Jayce also runs through town, which in turn powers the mills along it." +
     "The town still has some dilapidated structures, but many of them have either been torn down by the renovators or repaired back into working condition.";
@@ -73,3 +74,4 @@ Weston.local_map="City Maps/Weston_and_Environs.png";
 Weston.latitude=39.16414;
 Weston.longitude=126.56250;
 
+var all_settlements={"Weston":Weston};

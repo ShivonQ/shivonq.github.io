@@ -37,8 +37,8 @@ function initMap() {
         },
         tileSize:
             new google.maps.Size(538,433),
-        maxZoom:4,
-        minZoom:4,
+        maxZoom:6,
+        minZoom:1,
         radius:5362944,
         name:'archaevas'
     })

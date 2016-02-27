@@ -16,8 +16,8 @@ function initMap() {
         }
     });
     google.maps.event.addListener(map,"click",function(event){
-        var clickLat = event.lat();
-        var clickLon = event.lng();
+        var clickLat = event.latLng.lat();
+        var clickLon = event.latLng.lng();
         document.getElementById("lat_display").innerHTML=clickLat.toFixed(5);
         document.getElementById("lng_display").innerHTML=clickLon.toFixed(5);
     });

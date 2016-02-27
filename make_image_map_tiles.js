@@ -27,7 +27,7 @@ function initMap() {
 
             //return 'file://localhost:3010/static/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg";
             //return 'file://localhost/C:/Users/School/WebstormProjects/Project_1/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg"
-            return '/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg";
+            return '/maptiles/archaevas_'+normalizedCoord.y+"-"+normalizedCoord.x+".jpeg";
         },
         tileSize:
             new google.maps.Size(538,433),
@@ -63,8 +63,9 @@ function initMap() {
 // Normalizes the coords that tiles repeat across the x axis (horizontally)
 // like the standard Google map tiles.
 function getNormalizedCoord(coord, zoom) {
-    var x = coord.y;
-    var y = coord.x;
+    //I found out that my filng naming convention was
+    var y = coord.y;
+    var x = coord.x;
 
     // tile range in one direction range is dependent on zoom level
     // 0 = 1 tile, 1 = 2 tiles, 2 = 4 tiles, 3 = 8 tiles, etc

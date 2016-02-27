@@ -29,3 +29,9 @@ a{
 ul{
     list-style-type: none;
 }
+#map {
+    height: 400px;
+    width: 600px;
+    background: palegoldenrod;
+    border: groove cadetblue 12px;
+}

@@ -13,8 +13,9 @@ function initMap() {
         zoom: 4,
         streetViewControl: false,
         scaleControl:true,
+        zoomControl:false,
         mapTypeControlOptions: {
-            mapTypeIds: ['archaevas'],
+            mapTypeIds: ['archaevas']
         }
     });
     google.maps.event.addListener(map,"click",function(event){
@@ -41,7 +42,7 @@ function initMap() {
             new google.maps.Size(538,433),
         maxZoom:4,
         minZoom:4,
-        radius:5362944,
+        radius:4362944,
         name:'archaevas'
     })
     map.mapTypes.set('archaevas',archaevasMapType);

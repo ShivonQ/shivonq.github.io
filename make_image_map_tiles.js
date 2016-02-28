@@ -12,8 +12,9 @@ function initMap() {
         center: my_lat_lng,
         zoom: 4,
         streetViewControl: false,
-        scaleControl:true,
+        //scaleControl:true,
         zoomControl:false,
+        mapTypeControl:false,
         mapTypeControlOptions: {
             mapTypeIds: ['archaevas']
         }

@@ -166,6 +166,7 @@
 </div>
 <script>
     function grab_city_data(element){
+        localStorage.removeItem("City_Data");
         var name_of_settlement=element.innerHTML;
         var this_city=all_settlements[name_of_settlement];
 

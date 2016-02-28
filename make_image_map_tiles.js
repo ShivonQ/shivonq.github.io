@@ -12,9 +12,9 @@ function initMap() {
         center: my_lat_lng,
         zoom: 4,
         streetViewControl: false,
+        scaleControl:true,
         mapTypeControlOptions: {
             mapTypeIds: ['archaevas'],
-            scaleControl: true
         }
     });
     google.maps.event.addListener(map,"click",function(event){

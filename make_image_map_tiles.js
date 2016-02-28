@@ -63,6 +63,13 @@ function initMiniMap() {
         map:mini_map,
         title:document.getElementById('city_name').innerHTML
     });
+
+    mini_map.addListener('center_changed',function() {
+        //Since the minimap is for the single city only, it always returns to the city.
+        window.setTimeout(function(){
+            mini_map.panTo(city_marker.getPosition());
+        },5000);
+    });
     var archaevasMapType=new google.maps.ImageMapType({
         getTileUrl: function(coord,zoom){
             var normalizedCoord= getNormalizedCoord(coord,zoom);

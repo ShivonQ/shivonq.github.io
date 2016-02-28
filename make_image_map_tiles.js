@@ -47,8 +47,8 @@ function initMap() {
     map.setMapTypeId('archaevas');
 }
 function initMiniMap() {
-    var lat=parseInt(document.getElementById('lat_insert').innerHTML);
-    var lng=parseInt(document.getElementById('lng_insert').innerHTML);
+    var lat=parseFloat(document.getElementById('lat_insert').innerHTML);
+    var lng=parseFloat(document.getElementById('lng_insert').innerHTML);
     var my_mini_lat_lng={lat: lat,lng: lng}
     var map = new google.maps.Map(document.getElementById('mini_map'), {
         center: my_mini_lat_lng,
@@ -58,12 +58,12 @@ function initMiniMap() {
             mapTypeIds: ['archaevas']
         }
     });
-    google.maps.event.addListener(map,"click",function(event){
-        var clickLat = event.latLng.lat();
-        var clickLon = event.latLng.lng();
-        document.getElementById("lat_display").innerHTML=clickLat.toFixed(5);
-        document.getElementById("lng_display").innerHTML=clickLon.toFixed(5);
-    });
+    //google.maps.event.addListener(map,"click",function(event){
+    //    var clickLat = event.latLng.lat();
+    //    var clickLon = event.latLng.lng();
+    //    document.getElementById("lat_display").innerHTML=clickLat.toFixed(5);
+    //    document.getElementById("lng_display").innerHTML=clickLon.toFixed(5);
+    //});
     var archaevasMapType=new google.maps.ImageMapType({
         getTileUrl: function(coord,zoom){
             var normalizedCoord= getNormalizedCoord(coord,zoom);

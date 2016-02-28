@@ -50,7 +50,7 @@ function initMiniMap() {
     var lat=parseFloat(document.getElementById('lat_insert').innerHTML);
     var lng=parseFloat(document.getElementById('lng_insert').innerHTML);
     var my_mini_lat_lng={lat: lat,lng: lng}
-    var map = new google.maps.Map(document.getElementById('mini_map'), {
+    var mini_map = new google.maps.Map(document.getElementById('mini_map'), {
         center: my_mini_lat_lng,
         zoom: 4,
         streetViewControl: false,
@@ -58,12 +58,11 @@ function initMiniMap() {
             mapTypeIds: ['archaevas']
         }
     });
-    //google.maps.event.addListener(map,"click",function(event){
-    //    var clickLat = event.latLng.lat();
-    //    var clickLon = event.latLng.lng();
-    //    document.getElementById("lat_display").innerHTML=clickLat.toFixed(5);
-    //    document.getElementById("lng_display").innerHTML=clickLon.toFixed(5);
-    //});
+    var city_marker=new google.maps.Marker({
+        position:my_mini_lat_lng,
+        map:mini_map,
+        title:document.getElementById('city_name').innerHTML
+    });
     var archaevasMapType=new google.maps.ImageMapType({
         getTileUrl: function(coord,zoom){
             var normalizedCoord= getNormalizedCoord(coord,zoom);
@@ -82,8 +81,8 @@ function initMiniMap() {
         radius:5362944,
         name:'archaevas'
     })
-    map.mapTypes.set('archaevas',archaevasMapType);
-    map.setMapTypeId('archaevas');
+    mini_map.mapTypes.set('archaevas',archaevasMapType);
+    mini_map.setMapTypeId('archaevas');
 }
 
 // Normalizes the coords that tiles repeat across the x axis (horizontally)

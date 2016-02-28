@@ -1,4 +1,11 @@
-.img-thumbnail{
+#img-thumbnail{
     border: groove;
 
+}
+#mini_map{
+    height: 200px;
+    width: 300px;
+    background: palegoldenrod;
+    border: groove cadetblue 5px;
+    align-content: center;
 }

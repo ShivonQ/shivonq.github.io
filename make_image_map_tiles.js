@@ -7,8 +7,9 @@
 //https://developers.google.com/maps/documentation/javascript/maptypes#ImageMapTypes
 
 function initMap() {
+    var my_lat_lng={lat:0,lng:0};
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 0, lng: 0},
+        center: my_lat_lng,
         zoom: 4,
         streetViewControl: false,
         mapTypeControlOptions: {

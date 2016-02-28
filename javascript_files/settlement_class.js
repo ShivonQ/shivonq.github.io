@@ -97,4 +97,4 @@ The_Nine_Shards.city_map="";
 The_Nine_Shards.local_map="";
 The_Nine_Shards.latitude=-72.34246;
 The_Nine_Shards.longitude=19.42383;
-var all_settlements={"Weston":Weston};
+var all_settlements={"Weston":Weston,"The Nine Shards":The_Nine_Shards};

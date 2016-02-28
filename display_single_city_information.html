@@ -29,6 +29,12 @@
             <td colspan="4" align="center" id="city_location_insert">City Location</td>
         </tr>
         <tr>
+            <td align="center" >Latitude: </td>
+            <td id="lat_insert"></td>
+            <td align="center">Longitude: </td>
+            <td id="lng_insert"></td>
+        </tr>
+        <tr>
             <td id="pop_insert" colspan="2">Population:</td>
             <td id="gp_limit_insert" colspan="2">GP Limit:</td>
         </tr>
@@ -210,7 +216,9 @@
 
         document.getElementById("city_name").innerHTML=this_city.name;
         document.getElementById("title_of_city").innerHTML=this_city.name;
-        document.getElementById("city_location_insert").innerHTML=this_city.country_or_area+" Latitude:<span id='lat_in_doc'>"+this_city.latitude+"</span> Longitude:<span id='lng_in_doc'>"+this_city.longitude;
+        document.getElementById("city_location_insert").innerHTML=this_city.country_or_area;
+        document.getElementById('lat_insert').innerHTML=(this_city.latitude).toString();
+        document.getElementById('lng_insert').innerHTML=(this_city.longitude).toString();
         document.getElementById("pop_insert").innerHTML="Population: "+this_city.population;
         document.getElementById("gp_limit_insert").innerHTML="GP Limit:"+this_city.money_limit+"gp";
         document.getElementById("governtment_type_and_alignment_insert").innerHTML=this_city.power_center_in_community+"::::"+this_city.power_center_alignement;

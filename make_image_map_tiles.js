@@ -58,11 +58,11 @@ function initMiniMap() {
             mapTypeIds: ['archaevas']
         }
     });
-    //var city_marker=new google.maps.Marker({
-    //    position:my_mini_lat_lng,
-    //    map:mini_map,
-    //    title:document.getElementById('city_name').innerHTML
-    //});
+    var city_marker=new google.maps.Marker({
+        position:my_mini_lat_lng,
+        map:mini_map,
+        title:document.getElementById('city_name').innerHTML
+    });
     var archaevasMapType=new google.maps.ImageMapType({
         getTileUrl: function(coord,zoom){
             var normalizedCoord= getNormalizedCoord(coord,zoom);

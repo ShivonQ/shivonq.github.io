@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
     <!--<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>-->
     <!--<script type="text/javascript" src="make_image_map_tiles.js"></script>-->
     <link rel="stylesheet" href="css/global_css.css">
@@ -168,6 +169,18 @@
 <div class="col-sm-4">
     <img class="img-thumbnail city_map" src="City%20Maps/Weston.bmp" width="200">
     <img class="img-thumbnail" src="City%20Maps/Weston_and_Environs.png" width="200">
+</div>
+<style>
+
+    #mini_map {
+        height: 200px;
+        width: 200px;
+        background: palegoldenrod;
+        border: groove cadetblue 5px;
+    }
+</style>
+<div id="mini_map" class="col-md-4">
+
 </div>
 <script>
     //

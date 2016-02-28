@@ -44,26 +44,45 @@ function initMap() {
     })
     map.mapTypes.set('archaevas',archaevasMapType);
     map.setMapTypeId('archaevas');
-    //var moonMapType = new google.maps.ImageMapType({
-    //    getTileUrl: function(coord, zoom) {
-    //        var normalizedCoord = getNormalizedCoord(coord, zoom);
-    //        if (!normalizedCoord) {
-    //            return null;
-    //        }
-    //        var bound = Math.pow(2, zoom);
-    //        return '//mw1.google.com/mw-planetary/lunar/lunarmaps_v1/clem_bw' +
-    //            '/' + zoom + '/' + normalizedCoord.x + '/' +
-    //            (bound - normalizedCoord.y - 1) + '.jpg';
-    //    },
-    //    tileSize: new google.maps.Size(538, 433),
-    //    maxZoom: 4,
-    //    minZoom: 4,
-    //    radius: 1738000,
-    //    name: 'Moon'
-    //});
-    //
-    //map.mapTypes.set('moon', moonMapType);
-    //map.setMapTypeId('moon');
+}
+function initMiniMap(lat,lng) {
+    var map = new google.maps.Map(document.getElementById('mini_map'), {
+        center: {lat: lat, lng: lng},
+        zoom: 4,
+        streetViewControl: false,
+        mapTypeControlOptions: {
+            mapTypeIds: ['archaevas']
+        }
+    });
+    google.maps.event.addListener(map,"click",function(event){
+        var clickLat = event.latLng.lat();
+        var clickLon = event.latLng.lng();
+        document.getElementById("lat_display").innerHTML=clickLat.toFixed(5);
+        document.getElementById("lng_display").innerHTML=clickLon.toFixed(5);
+    });
+    var archaevasMapType=new google.maps.ImageMapType({
+        getTileUrl: function(coord,zoom){
+            var normalizedCoord= getNormalizedCoord(coord,zoom);
+            if (!normalizedCoord){
+                return null
+            }
+            var bound=Math.pow(2,zoom);
+            //    C:\Users\School\Downloads\Archaevian Midlands 7 Maptiles
+            //    todo this didnt work either, tried running a node server to use it. didnt work
+
+            //return 'file://localhost:3010/static/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg";
+            //return 'file://localhost/C:/Users/School/WebstormProjects/Project_1/maptiles/archaevas_'+normalizedCoord.x+"-"+normalizedCoord.y+".jpeg"
+            return '/maptiles/archaevas_'+normalizedCoord.y+"-"+normalizedCoord.x+".jpeg";
+        },
+        tileSize:
+            new google.maps.Size(538,433),
+        maxZoom:4,
+        minZoom:4,
+        radius:5362944,
+        name:'archaevas'
+    })
+    map.mapTypes.set('archaevas',archaevasMapType);
+    map.setMapTypeId('archaevas');
 }
 
 // Normalizes the coords that tiles repeat across the x axis (horizontally)

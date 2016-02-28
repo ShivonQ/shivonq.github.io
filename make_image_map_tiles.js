@@ -46,7 +46,9 @@ function initMap() {
     map.mapTypes.set('archaevas',archaevasMapType);
     map.setMapTypeId('archaevas');
 }
-function initMiniMap(lat,lng) {
+function initMiniMap() {
+    var lat=document.getElementById('lat_in_doc').innerHTML;
+    var lng=document.getElementById('lng_in_doc').innerHTML;
     var map = new google.maps.Map(document.getElementById('mini_map'), {
         center: {lat: lat, lng: lng},
         zoom: 4,

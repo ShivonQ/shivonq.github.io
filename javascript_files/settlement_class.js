@@ -74,4 +74,27 @@ Weston.local_map="City Maps/Weston_and_Environs.png";
 Weston.latitude=39.16414;
 Weston.longitude=126.56250;
 
+var The_Nine_Shards=new Settlement_Data();
+The_Nine_Shards.name="The Nine Shards";
+The_Nine_Shards.country_or_area="The Keep of The Wind";
+The_Nine_Shards.population=548;
+The_Nine_Shards.money_limit=60000;
+The_Nine_Shards.power_center_in_community="Magocracy";
+The_Nine_Shards.power_center_alignement="Lawful Nuetral";
+The_Nine_Shards.authority_figures={"Governmental":[],"Guard Captain":[],"Notable Spellcasters":[]};
+The_Nine_Shards.city_guards=(The_Nine_Shards.population*0.01).toFixed(0);
+The_Nine_Shards.city_militia=(The_Nine_Shards.population*0.05).toFixed(0);
+The_Nine_Shards.major_exports=[];
+The_Nine_Shards.major_imports=[];
+The_Nine_Shards.general_description_of_settlement="";
+The_Nine_Shards.knowledge_local_information={
+    10:"",
+    15:"",
+    20:"",
+    25:"",
+    30:""};
+The_Nine_Shards.city_map="";
+The_Nine_Shards.local_map="";
+The_Nine_Shards.latitude=-72.34246;
+The_Nine_Shards.longitude=19.42383;
 var all_settlements={"Weston":Weston};

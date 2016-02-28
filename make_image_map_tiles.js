@@ -49,8 +49,9 @@ function initMap() {
 function initMiniMap() {
     var lat=parseInt(document.getElementById('lat_insert').innerHTML);
     var lng=parseInt(document.getElementById('lng_insert').innerHTML);
+    var my_mini_lat_lng={lat: lat,lng: lng}
     var map = new google.maps.Map(document.getElementById('mini_map'), {
-        center: {lat: lat, lng: lng},
+        center: my_mini_lat_lng,
         zoom: 4,
         streetViewControl: false,
         mapTypeControlOptions: {

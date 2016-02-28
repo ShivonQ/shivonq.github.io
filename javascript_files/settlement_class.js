@@ -224,4 +224,4 @@ Kopak.latitude=5.79090;
 Kopak.longitude=158.20313;
 
 
-var all_settlements={"Weston":Weston,"The Nine Shards":The_Nine_Shards,"Shardtown":Shardtown,"Golauk":Golauk};
+var all_settlements={"Weston":Weston,"The Nine Shards":The_Nine_Shards,"Shardtown":Shardtown,"Golauk":Golauk,"Chibblah":Chibblah,"Kopak":Kopak,"Tyrellia":Tyrellia};

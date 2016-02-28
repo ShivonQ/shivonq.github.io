@@ -40,7 +40,7 @@ Weston.power_center_in_community="Elected Council";
 Weston.power_center_alignement="Chaotic Good";
 
 Weston.authority_figures={"Governmental":["Mar the Hobgoblin","Amelia Nemoren","Nurse Practitioner Lorga","Aniel","Onemrious Olurba","Ketham Waterwalker","Socratea daughter of Kopak"],
-    "Guard Captain":["Renault Raegelaeine"],"Notable Spellcasters":["Ka-ah Bentini","Halvard Tillert","Nurse Practitioner Lorga","Darinthrall Shann","Ichraeme The Stout"]};
+    "Guard Captain":["Sheriff Renault Raegelaeine"],"Notable Spellcasters":["Ka-ah Bentini","Halvard Tillert","Nurse Practitioner Lorga","Darinthrall Shann","Ichraeme The Stout"]};
 Weston.city_guards=((Weston.population*0.01)+10).toFixed(0);
 Weston.city_militia=((Weston.population*0.05+20)).toFixed(0);
 Weston.major_exports=["Cider","Beer","Jewelry","Magic Items"];
@@ -97,4 +97,131 @@ The_Nine_Shards.city_map="";
 The_Nine_Shards.local_map="";
 The_Nine_Shards.latitude=-72.34246;
 The_Nine_Shards.longitude=19.42383;
-var all_settlements={"Weston":Weston,"The Nine Shards":The_Nine_Shards};
+
+var Shardtown=new Settlement_Data();
+Shardtown.name="Shardtown";
+Shardtown.country_or_area="The Keep of The Wind";
+Shardtown.population=26894;
+Shardtown.money_limit=100000;
+Shardtown.power_center_in_community="Elected Council, Subordinate to the 9";
+Shardtown.power_center_alignement=" Lawful Nuetral";
+Shardtown.authority_figures={"Governmental":[],"Guard Captain":[],"Notable Spellcasters":[]};
+Shardtown.city_guards=(Shardtown.population*0.01).toFixed(0);
+Shardtown.city_militia=(Shardtown.population*0.05).toFixed(0);
+Shardtown.major_exports=[];
+Shardtown.major_imports=[];
+Shardtown.general_description_of_settlement="";
+Shardtown.knowledge_local_information={
+    10:"",
+    15:"",
+    20:"",
+    25:"",
+    30:""};
+Shardtown.city_map="";
+Shardtown.local_map="";
+Shardtown.latitude=-72.34246;
+Shardtown.longitude=19.42383;
+
+var Golauk=new Settlement_Data();
+Golauk.name="Golauk";
+Golauk.country_or_area="The Golauchi Alliance";
+Golauk.population=6857;
+Golauk.money_limit=15000;
+Golauk.power_center_in_community="Elected Council";
+Golauk.power_center_alignement=" Neutral Good";
+Golauk.authority_figures={"Governmental":[],"Guard Captain":[],"Notable Spellcasters":[]};
+Golauk.city_guards=(Golauk.population*0.01).toFixed(0);
+Golauk.city_militia=(Golauk.population*0.05).toFixed(0);
+Golauk.major_exports=[];
+Golauk.major_imports=[];
+Golauk.general_description_of_settlement="";
+Golauk.knowledge_local_information={
+    10:"",
+    15:"",
+    20:"",
+    25:"",
+    30:""};
+Golauk.city_map="";
+Golauk.local_map="";
+Golauk.latitude=16.63619;
+Golauk.longitude=-49.74609;
+
+var Chibblah=new Settlement_Data();
+Chibblah.name="Chibblah";
+Chibblah.country_or_area="The Golauchi Alliance";
+Chibblah.population=5478;
+Chibblah.money_limit=15000;
+Chibblah.power_center_in_community="Elected Council";
+Chibblah.power_center_alignement=" Neutral Good";
+Chibblah.authority_figures={"Governmental":[],"Guard Captain":[],"Notable Spellcasters":[]};
+Chibblah.city_guards=(Chibblah.population*0.01).toFixed(0);
+Chibblah.city_militia=(Chibblah.population*0.05).toFixed(0);
+Chibblah.major_exports=[];
+Chibblah.major_imports=[];
+Chibblah.general_description_of_settlement="";
+Chibblah.knowledge_local_information={
+    10:"",
+    15:"",
+    20:"",
+    25:"",
+    30:""};
+Chibblah.city_map="";
+Chibblah.local_map="";
+Chibblah.latitude=-62.10388;
+Chibblah.longitude=-16.87500;
+
+var Tyrellia=new Settlement_Data();
+Tyrellia.name="Tyrellia";
+Tyrellia.country_or_area="The Golauchi Alliance";
+Tyrellia.population=5478;
+Tyrellia.money_limit=15000;
+Tyrellia.power_center_in_community="Meritocracy";
+Tyrellia.power_center_alignement=" Chaotic Good";
+Tyrellia.authority_figures={"Governmental":[],"Guard Captain":[],"Notable Spellcasters":[]};
+Tyrellia.city_guards=(Tyrellia.population*0.01).toFixed(0);
+Tyrellia.city_militia=(Tyrellia.population*0.05).toFixed(0);
+Tyrellia.major_exports=[];
+Tyrellia.major_imports=[];
+Tyrellia.general_description_of_settlement="";
+Tyrellia.knowledge_local_information={
+    10:"",
+    15:"",
+    20:"",
+    25:"",
+    30:""};
+Tyrellia.city_map="";
+Tyrellia.local_map="";
+Tyrellia.latitude=-31.05293;
+Tyrellia.longitude=-39.28711;
+
+
+var Kopak=new Settlement_Data();
+Kopak.name="Kopak";
+Kopak.country_or_area="The Wilds";
+Kopak.population=3960;
+Kopak.money_limit=3000;
+Kopak.power_center_in_community="Theocracy";
+Kopak.power_center_alignement=" Chaotic Good";
+Kopak.authority_figures={"Governmental":["Illia Villanova", "Maester Ericrell Seymour", "Arindrell Bellathorne", "Kertonbael Silverwind" ],
+    "Guard Captain":["Billard Farsentol"],"Notable Spellcasters":["Illia Villanova", "Maester Ericrell Seymour", "Arindrell Bellathorne"]};
+Kopak.city_guards=(Kopak.population*0.01).toFixed(0);
+Kopak.city_militia=(Kopak.population*0.05).toFixed(0);
+Kopak.major_exports=["Religion","Living Wood Furniture & Goods","Leafblade Guisarmes"];
+Kopak.major_imports=["Books","Stories","Iron"];
+Kopak.general_description_of_settlement="";
+Kopak.knowledge_local_information={
+    10:"A city built in the trees.",
+    15:"At the center of the city is the Anchor Tree, a strange species with rainbow colored trunks.",
+    20:"The School educates young clerics, druids, and rangers then sends them into the world to return with knowledge, stories and experiences",
+    25:"The Great Library is in the boughs of the tree, and has been there since year 80 of the Third Age.",
+    30:"The School was built by the survivors of the forest after the Elemental Storm of 2568, the Second Age.",
+    35:"High Priestess Illia Villanova was an old woman when the Storm happened over 1200 years ago."
+};
+
+Kopak.city_map="";
+Kopak.local_map="";
+Kopak.latitude=5.79090;
+Kopak.longitude=158.20313;
+
+
+var all_settlements={"Weston":Weston,"The Nine Shards":The_Nine_Shards,"Shardtown":Shardtown,"Golauk":Golauk};

@@ -43,7 +43,7 @@ function initMap() {
             new google.maps.Size(538,433),
         maxZoom:4,
         minZoom:4,
-        radius:5362944,
+        radius:3362944,
         name:'archaevas'
     });
     map.mapTypes.set('archaevas',archaevasMapType);

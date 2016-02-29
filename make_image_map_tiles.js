@@ -47,13 +47,13 @@ function initMap() {
         radius:3362944,
         name:'archaevas'
     });
-    var scaleInterval = setInterval(function() {
-        var scale = $(".gm-style-cc:not(.gmnoprint):contains(' km')");
-        if (scale.length) {
-            scale.click();
-            clearInterval(scaleInterval);
-        }
-    }, 100);
+    //var scaleInterval = setInterval(function() {
+    //    var scale = $(".gm-style-cc:not(.gmnoprint):contains(' km')");
+    //    if (scale.length) {
+    //        scale.click();
+    //        clearInterval(scaleInterval);
+    //    }
+    //}, 100);
     map.mapTypes.set('archaevas',archaevasMapType);
     map.setMapTypeId('archaevas');
 }

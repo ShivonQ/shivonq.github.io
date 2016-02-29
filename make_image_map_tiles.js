@@ -10,11 +10,12 @@ function initMap() {
     var my_lat_lng={lat:0,lng:0};
     var map = new google.maps.Map(document.getElementById('map'), {
         center: my_lat_lng,
-        zoom: 4,
+        zoom: 8,
         streetViewControl: false,
         //scaleControl:true,
         zoomControl:false,
         mapTypeControl:false,
+        scaleControl:true,
         mapTypeControlOptions: {
             mapTypeIds: ['archaevas']
         }
@@ -41,11 +42,11 @@ function initMap() {
         },
         tileSize:
             new google.maps.Size(538,433),
-        maxZoom:4,
-        minZoom:4,
+        maxZoom:8,
+        minZoom:8,
         radius:5362944,
         name:'archaevas'
-    })
+    });
     map.mapTypes.set('archaevas',archaevasMapType);
     map.setMapTypeId('archaevas');
 }
@@ -64,7 +65,7 @@ function initMiniMap() {
     //a single marker for the city.  Not so useful now, but later when I make a better world map w/o city titles on the images it will be.
     var city_marker=new google.maps.Marker({
         position:my_mini_lat_lng,
-        map:mini_map,icon:'red_stars.png',
+        map:mini_map,
         title:document.getElementById('city_name').innerHTML
     });
 

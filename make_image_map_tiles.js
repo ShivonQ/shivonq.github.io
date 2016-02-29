@@ -14,7 +14,8 @@ function initMap() {
         streetViewControl: false,
         //scaleControl:true,
         zoomControl:false,
-        mapTypeControl:false,scaleControl:true,
+        mapTypeControl:false,
+        scaleControl:true,
         mapTypeControlOptions: {
             mapTypeIds: ['archaevas']
         }

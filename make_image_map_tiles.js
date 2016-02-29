@@ -64,7 +64,7 @@ function initMiniMap() {
     //a single marker for the city.  Not so useful now, but later when I make a better world map w/o city titles on the images it will be.
     var city_marker=new google.maps.Marker({
         position:my_mini_lat_lng,
-        map:mini_map,icon:iconBase +'red_stars.png',
+        map:mini_map,icon:'red_stars.png',
         title:document.getElementById('city_name').innerHTML
     });
 

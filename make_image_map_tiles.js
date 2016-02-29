@@ -10,7 +10,7 @@ function initMap() {
     var my_lat_lng={lat:0,lng:0};
     var map = new google.maps.Map(document.getElementById('map'), {
         center: my_lat_lng,
-        zoom: 8,
+        zoom: 4,
         streetViewControl: false,
         //scaleControl:true,
         zoomControl:false,
@@ -42,8 +42,8 @@ function initMap() {
         },
         tileSize:
             new google.maps.Size(538,433),
-        maxZoom:8,
-        minZoom:8,
+        maxZoom:4,
+        minZoom:4,
         radius:3362944,
         name:'archaevas'
     });

@@ -8,15 +8,6 @@ body{
 nav{
     background:  url(../static_images/sandstone_brick_banner.jpg);
 }
-.navbar-brand{
-    color: burlywood;
-}
-a.nav-link{
-    color: darkslateblue;
-}
-.nav-link {
-    color: #000;
-}
 .big_title{
     font-style: italic;
 }
@@ -34,4 +25,11 @@ ul{
     width: 600px;
     background: palegoldenrod;
     border: groove cadetblue 12px;
+}
+#active{
+    background: url(../static_images/sandstone_brick_banner.jpg);
+    background-color: transparent;
+}
+a{
+    color: green;
 }

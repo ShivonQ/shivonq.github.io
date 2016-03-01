@@ -50,6 +50,7 @@
                     <td><input type="text" id="city_name_box" name="lat_display_box" size="25" maxlength="60"></td>
                     <td>Allegiance:</td>
                     <td><select name="allegiance_dropdown">
+                        <option value="none">  </option>
                         <option value="scoiatel">Scoia'tel</option>
                         <option value="gjomatoughariil">Gjomatoughariil</option>
                         <option value="thokklund">Thokklund</option>
@@ -73,6 +74,7 @@
                 <tr>
                     <td>Governement Type:</td>
                     <td><select name="gov_type_dropdown">
+                        <option value="none">  </option>
                         <option value="Magocracy">Magocracy</option>
                         <option value="Elected Council">Elected Council</option>
                         <option value="Monarchy">Monarchy</option>
@@ -90,6 +92,7 @@
                     </select></td>
                     <td>Alignment:</td>
                     <td><select name="alignement_dropdown">
+                        <option value="none"> </option>
                         <option value="lg">Lawful Good</option>
                         <option value="ng">Neutral Good</option>
                         <option value="cg">Chaotic Good</option>
@@ -100,13 +103,24 @@
                         <option value="ne">Neutral Evil</option>
                         <option value="ce">Chaotic Evil</option>
                     </select></td>
+
                 </tr>
                 <tr>
-                    <td align="right" colspan="4">
-                    <fieldset >
-                        <div id="gov_npcs_fieldset"></div>
+                    <td align="left" colspan="2">
+                    <fieldset class="small_inner_fieldset">
+                        <div id="gov_npcs_div"></div>
                         <legend class="smaller_legend">Add Government NPCs</legend>
-                        <input type="button" value="Add" class="add_gov" id="add_gov_npc_button">
+                        <input type="button" value="Add Another NPC" class="add_gov" id="add_gov_npc_button">
+                        </fieldset>
+                    </td>
+                    <td colspan="2"><textarea id="city_description">Please enter the city's description.</textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <fieldset class="small_inner_fieldset">
+                            <div id="general_stores_div"></div>
+                            <legend class="smaller_legend">General Stores</legend>
+                            <input type="button" value="Add Another Store" class="add_general" id="add_general_store_button">
                         </fieldset>
                     </td>
                 </tr>
@@ -117,18 +131,28 @@
 </body>
 <script>
     $(document).ready(function(){
-        $("button.add_gov").on("click",function(){
-            alert("ALERT");
+        $("#add_gov_npc_button").on("click",function(){
             var all_gov_npcs=$("<div class=\"all_gov_npcs\" class=\"gov_npc\"/>");
             var npc_text_field=$("<input type=\"text\" class=\"gov_npc\"/>");
-            var remove_gov_npc_button=$("<input type=\"button\" class=\"remove_gov_button\"/>");
-            remove_gov_npc_button.click(function(){
+            var remove_gov_button=$("<button  class=\"remove_gov_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
+            remove_gov_button.click(function(){
                 $(this).parent().remove();
             });
             all_gov_npcs.append(npc_text_field);
-            all_gov_npcs.append(remove_gov_npc_button);
-            $("#gov_npcs_fieldset").append(all_gov_npcs);
+            all_gov_npcs.append(remove_gov_button);
+            $("#gov_npcs_div").append(all_gov_npcs);
         });
+        $("#add_general_store_button").on("click",function(){
+            var all_general_stores=$("<div class=\"all_general_stores\" class=\"general_stores\"/>");
+            var store_text_field=$("<input type=\"text\" class=\"general_stores\"/>");
+            var remove_gen_store_button=$("<button  class=\"remove_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
+            remove_gen_store_button.click(function(){
+                $(this).parent().remove();
+            });
+            all_general_stores.append(store_text_field);
+            all_general_stores.append(remove_gen_store_button);
+            $("#general_stores_div").append(all_general_stores);
+        })
     });
 </script>
 </html>

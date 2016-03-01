@@ -59,6 +59,11 @@ fieldset{
     clear:both;
     margin:5px 5px;
 }
+#city_description{
+    padding-top: 10px;
+    width:100%;
+    height:100%;
+}
 legend {
     padding:0px 10px;
     background:black;

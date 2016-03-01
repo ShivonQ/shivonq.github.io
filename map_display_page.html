@@ -47,7 +47,7 @@
 </div>
 <div>
     <!--TODO make this form have an action to push to DB-->
-    <form id="admin_city_data_entry_form">
+    <form id="admin_city_data_entry_form" enctype="application/json">
         <fieldset>
             <legend id="large_legend">Admin City Data Entry Form</legend>
             <table id="table_form_city_data">
@@ -57,18 +57,18 @@
                     <td>Allegiance:</td>
                     <td><select name="allegiance_dropdown" required="required">
                         <option value="none">  </option>
-                        <option value="scoiatel">Scoia'tel</option>
-                        <option value="gjomatoughariil">Gjomatoughariil</option>
-                        <option value="thokklund">Thokklund</option>
-                        <option value="lochton">Lochton</option>
-                        <option value="denninhdane">Denninhdane</option>
-                        <option value="orsim">Orsim</option>
-                        <option value="thekeep">The Keep of The Winds</option>
-                        <option value="golauchi">The Golauchi Alliance</option>
-                        <option value="wilds">The Wilds</option>
-                        <option value="cavalcade">Cavalcade</option>
-                        <option value="tumult">The Tumultuous Lands</option>
-                        <option value="endlesssnads">The Endless Sands</option>
+                        <option value="Scoia'tel">Scoia'tel</option>
+                        <option value="Gjomatoughariil">Gjomatoughariil</option>
+                        <option value="Thokklund">Thokklund</option>
+                        <option value="Lochton">Lochton</option>
+                        <option value="Denninhdane">Denninhdane</option>
+                        <option value="Orsim">Orsim</option>
+                        <option value="The Keep of The Wind">The Keep of The Winds</option>
+                        <option value="The Golauchi Alliance">The Golauchi Alliance</option>
+                        <option value="The Wilds">The Wilds</option>
+                        <option value="Cavalcade">Cavalcade</option>
+                        <option value="The Tumultuous Lands">The Tumultuous Lands</option>
+                        <option value="The Endless Sands">The Endless Sands</option>
                     </select></td>
                 </tr>
                 <tr>
@@ -99,15 +99,15 @@
                     <td>Alignment:</td>
                     <td><select name="alignement_dropdown" required="required">
                         <option value="none"> </option>
-                        <option value="lg">Lawful Good</option>
-                        <option value="ng">Neutral Good</option>
-                        <option value="cg">Chaotic Good</option>
-                        <option value="ln">Lawful Neutral</option>
-                        <option value="nn">Neutral Neutral</option>
-                        <option value="cn">Chaotic Neutral</option>
-                        <option value="le">Lawful Evil</option>
-                        <option value="ne">Neutral Evil</option>
-                        <option value="ce">Chaotic Evil</option>
+                        <option value="Lawful Good">Lawful Good</option>
+                        <option value="Neutral Good">Neutral Good</option>
+                        <option value="Chaotic Good">Chaotic Good</option>
+                        <option value="Lawful Neutral">Lawful Neutral</option>
+                        <option value="Neutral Neutral">Neutral Neutral</option>
+                        <option value="Chaotic Neutra">Chaotic Neutral</option>
+                        <option value="Lawful Evil">Lawful Evil</option>
+                        <option value="Neutral Evil">Neutral Evil</option>
+                        <option value="Chaotic Evil">Chaotic Evil</option>
                     </select></td>
 
                 </tr>
@@ -160,10 +160,19 @@
                     <td>Sheriff or Captain</td>
                     <td><select>
                         <option value="none"></option>
-                        <option value="sheriff">Sheriff</option>
-                        <option value="captain">Captain</option>
+                        <option value="Sheriff">Sheriff</option>
+                        <option value="Captain">Captain</option>
                     </select></td>
                     <td colspan="2"><input type="text" id="guard_captain" size="30" maxlength="40"></td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <fieldset>
+                            <div id="spellcasters_div"></div>
+                            <legend class="smaller_legend">Notable Spellcasters</legend>
+                            <input type="button" value="Add Spellcaster" class="add_caster" id="add_spellcaster_button" size="20" maxlength="30">
+                        </fieldset>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -179,6 +188,12 @@
                             <legend class="smaller_legend">Major Exports</legend>
                             <input type="button" value="Add Import" class="add_import" id="add_import_button">
                         </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="file" name="city_map"/><br />
+                        <input type="submit" name="submit_image">
                     </td>
                 </tr>
             </table>
@@ -198,6 +213,22 @@
 //                $this.data("contents",appendTo(parent));
 //            }
 //        });
+//
+
+
+        $("#add_spellcaster_button").on("click",function(){
+            var all_casters=$("<div class=\"all_casters\" class=\"casters\"/>");
+            var caster_text_field=$("<input type=\"text\" class=\"caster\"/>");
+            var remove_caster_button=$("<button  class=\"remove_caster_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
+            var select_caster_type=$("<select><option value='none'></option><option value='Arcane'>Arcane</option><option value='Divine'>Divine</option>")
+            remove_caster_button.click(function(){
+                $(this).parent().remove();
+            });
+            all_casters.append(select_caster_type);
+            all_casters.append(caster_text_field);
+            all_casters.append(remove_caster_button);
+            $("#spellcasters_div").append(all_casters);
+        });
         $("#add_import_button").on("click",function(){
             var all_imports=$("<div class=\"all_imports\" class=\"imports\"/>");
             var import_text_field=$("<input type=\"text\" class=\"import\"/>");

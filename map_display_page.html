@@ -4,6 +4,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
@@ -43,9 +49,9 @@
     <!--TODO make this form have an action to push to DB-->
     <form id="admin_city_data_entry_form">
         <fieldset>
-            <legend>Admin City Data Entry Form</legend>
+            <legend id="large_legend">Admin City Data Entry Form</legend>
             <table id="table_form_city_data">
-                <tr>
+                <tr >
                     <td>City Name:</td>
                     <td><input type="text" id="city_name_box" name="lat_display_box" size="25" maxlength="60" required="required"></td>
                     <td>Allegiance:</td>
@@ -115,7 +121,7 @@
                     </td>
                     <td colspan="2"><textarea id="city_description" required="required" maxlength="300">Please enter the city's description.</textarea></td>
                 </tr>
-                <tr><td colspan="4"><hr id="form_divider"></td></tr>
+                <tr><td colspan="4"><hr class="form_divider"></td></tr>
                 <tr><td colspan="4" id="shops_banner" align="center">Shops in Town</td></tr>
                 <tr>
                     <td colspan="2">
@@ -138,14 +144,40 @@
                         <fieldset class="small_inner_fieldset">
                             <div id="weps_and_armor_div"></div>
                             <legend class="smaller_legend">Weapons and Armor</legend>
-                            <input type="button" value="Add Another Shop" class="add_general" id="add_weps_and_armor_button">
+                            <input type="button" value="Add Another Shop" class="add_weps" id="add_weps_and_armor_button">
                         </fieldset>
                     </td>
                     <td colspan="2">
                         <fieldset class="small_inner_fieldset">
-                            <div id="magic_shops_div"></div>
+                            <div id="magic_shops_div" ></div>
                             <legend class="smaller_legend">Magic Items</legend>
                             <input type="button" value="Add Another Shop" class="add_magic" id="add_magic_store_button">
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr><td colspan="4"><hr class="form_divider"></td></tr>
+                <tr>
+                    <td>Sheriff or Captain</td>
+                    <td><select>
+                        <option value="none"></option>
+                        <option value="sheriff">Sheriff</option>
+                        <option value="captain">Captain</option>
+                    </select></td>
+                    <td colspan="2"><input type="text" id="guard_captain" size="30" maxlength="40"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <fieldset class="small_inner_fieldset">
+                            <div id="major_exports_div"></div>
+                            <legend class="smaller_legend">Major Exports</legend>
+                            <input type="button" value="Add Export" class="add_export" id="add_export_button">
+                        </fieldset>
+                    </td>
+                    <td colspan="2">
+                        <fieldset class="small_inner_fieldset">
+                            <div id="major_imports_div"></div>
+                            <legend class="smaller_legend">Major Exports</legend>
+                            <input type="button" value="Add Import" class="add_import" id="add_import_button">
                         </fieldset>
                     </td>
                 </tr>
@@ -156,6 +188,38 @@
 </body>
 <script>
     $(document).ready(function(){
+//        $("#large_legend").on("click",function(){
+//            var $this=$(this);
+//            var parent=$this.parent();
+//            var contents=parent.contents().not(this);
+//            if(contents.length>0){
+//                $this.data("contents",contents.remove());
+//            } else if (contents.length==0){
+//                $this.data("contents",appendTo(parent));
+//            }
+//        });
+        $("#add_import_button").on("click",function(){
+            var all_imports=$("<div class=\"all_imports\" class=\"imports\"/>");
+            var import_text_field=$("<input type=\"text\" class=\"import\"/>");
+            var remove_import_button=$("<button  class=\"remove_import_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
+            remove_import_button.click(function(){
+                $(this).parent().remove();
+            });
+            all_imports.append(import_text_field);
+            all_imports.append(remove_import_button);
+            $("#major_imports_div").append(all_imports);
+        });
+        $("#add_export_button").on("click",function(){
+            var all_exports=$("<div class=\"all_exports\" class=\"exports\"/>");
+            var export_text_field=$("<input type=\"text\" class=\"export\"/>");
+            var remove_export_button=$("<button  class=\"remove_export_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
+            remove_export_button.click(function(){
+                $(this).parent().remove();
+            });
+            all_exports.append(export_text_field);
+            all_exports.append(remove_export_button);
+            $("#major_exports_div").append(all_exports);
+        });
         $("#add_gov_npc_button").on("click",function(){
             var all_gov_npcs=$("<div class=\"all_gov_npcs\" class=\"gov_npc\"/>");
             var npc_text_field=$("<input type=\"text\" class=\"gov_npc\"/>");
@@ -180,7 +244,7 @@
         });
         $("#add_tavern_button").on("click",function(){
             var all_taverns_and_otheras=$("<div class=\"all_taverns_and_others\" class=\"taverns_and_others\"/>");
-            var store_text_field=$("<input type=\"text\" class=\"tavern_or_other\"/>");
+            var store_text_field=$("<input type=\"text\" class=\"taverns_or_others\"/>");
             var remove_tavern_button=$("<button  class=\"remove_tavern_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
             remove_tavern_button.click(function() {
                 $(this).parent().remove();
@@ -188,6 +252,28 @@
             all_taverns_and_otheras.append(store_text_field);
             all_taverns_and_otheras.append(remove_tavern_button);
             $("#taverns_div").append(all_taverns_and_otheras);
+        });
+        $("#add_weps_and_armor_button").on("click",function(){
+            var all_weps_and_armor=$("<div class=\"all_weps_and_armor\" class=\"weps_and_armor\"/>");
+            var store_text_field=$("<input type=\"text\" class=\"wep_armor_shop\"/>");
+            var remove_weps_button=$("<button  class=\"remove_weps_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
+            remove_weps_button.click(function() {
+                $(this).parent().remove();
+            });
+            all_weps_and_armor.append(store_text_field);
+            all_weps_and_armor.append(remove_weps_button);
+            $("#weps_and_armor_div").append(all_weps_and_armor);
+        });
+        $("#add_magic_store_button").on("click",function(){
+            var all_magic=$("<div class=\"all_magic_items\" class=\"magic_items\"/>");
+            var store_text_field=$("<input type=\"text\" class=\"magic_item_shop\"/>");
+            var remove_magic_button=$("<button  class=\"remove_magic_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
+            remove_magic_button.click(function() {
+                $(this).parent().remove();
+            });
+            all_magic.append(store_text_field);
+            all_magic.append(remove_magic_button);
+            $("#magic_shops_div").append(all_magic);
         });
     });
 </script>

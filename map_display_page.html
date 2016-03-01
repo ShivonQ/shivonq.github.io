@@ -47,9 +47,9 @@
             <table id="table_form_city_data">
                 <tr>
                     <td>City Name:</td>
-                    <td><input type="text" id="city_name_box" name="lat_display_box" size="25" maxlength="60"></td>
+                    <td><input type="text" id="city_name_box" name="lat_display_box" size="25" maxlength="60" required="required"></td>
                     <td>Allegiance:</td>
-                    <td><select name="allegiance_dropdown">
+                    <td><select name="allegiance_dropdown" required="required">
                         <option value="none">  </option>
                         <option value="scoiatel">Scoia'tel</option>
                         <option value="gjomatoughariil">Gjomatoughariil</option>
@@ -67,13 +67,13 @@
                 </tr>
                 <tr>
                     <td>Latitude:</td>
-                    <td><input type="text" id="lat_display" name="lat_display_box" size="9" maxlength="15"></td>
+                    <td><input type="text" id="lat_display" name="lat_display_box" size="9" maxlength="15" required="required"></td>
                     <td>Longitude:</td>
-                    <td><input type="text" id="lng_display" name="lng_display_box" size="9" maxlength="15"></td>
+                    <td><input type="text" id="lng_display" name="lng_display_box" size="9" maxlength="15" required="required"></td>
                 </tr>
                 <tr>
                     <td>Governement Type:</td>
-                    <td><select name="gov_type_dropdown">
+                    <td><select name="gov_type_dropdown" required="required">
                         <option value="none">  </option>
                         <option value="Magocracy">Magocracy</option>
                         <option value="Elected Council">Elected Council</option>
@@ -91,7 +91,7 @@
 
                     </select></td>
                     <td>Alignment:</td>
-                    <td><select name="alignement_dropdown">
+                    <td><select name="alignement_dropdown" required="required">
                         <option value="none"> </option>
                         <option value="lg">Lawful Good</option>
                         <option value="ng">Neutral Good</option>
@@ -113,21 +113,39 @@
                         <input type="button" value="Add Another NPC" class="add_gov" id="add_gov_npc_button">
                         </fieldset>
                     </td>
-                    <td colspan="2"><textarea id="city_description">Please enter the city's description.</textarea></td>
+                    <td colspan="2"><textarea id="city_description" required="required" maxlength="300">Please enter the city's description.</textarea></td>
                 </tr>
+                <tr><td colspan="4"><hr id="form_divider"></td></tr>
+                <tr><td colspan="4" id="shops_banner" align="center">Shops in Town</td></tr>
                 <tr>
                     <td colspan="2">
                     <fieldset class="small_inner_fieldset">
                         <div id="general_stores_div"></div>
-                        <legend class="smaller_legend">General Stores</legend>
-                        <input type="button" value="Add Another Store" class="add_general" id="add_general_store_button">
+                        <legend class="smaller_legend">General</legend>
+                        <input type="button" value="Add Another Shop" class="add_general" id="add_general_store_button">
                     </fieldset>
                 </td>
                     <td colspan="2">
                         <fieldset class="small_inner_fieldset">
                             <div id="taverns_div"></div>
                             <legend class="smaller_legend">Taverns & Others</legend>
-                            <input type="button" value="Add Another Store" class="add_tavern" id="add_tavern_button">
+                            <input type="button" value="Add Another Shop" class="add_tavern" id="add_tavern_button">
+                        </fieldset>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <fieldset class="small_inner_fieldset">
+                            <div id="weps_and_armor_div"></div>
+                            <legend class="smaller_legend">Weapons and Armor</legend>
+                            <input type="button" value="Add Another Shop" class="add_general" id="add_weps_and_armor_button">
+                        </fieldset>
+                    </td>
+                    <td colspan="2">
+                        <fieldset class="small_inner_fieldset">
+                            <div id="magic_shops_div"></div>
+                            <legend class="smaller_legend">Magic Items</legend>
+                            <input type="button" value="Add Another Shop" class="add_magic" id="add_magic_store_button">
                         </fieldset>
                     </td>
                 </tr>

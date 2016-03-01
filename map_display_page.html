@@ -117,10 +117,17 @@
                 </tr>
                 <tr>
                     <td colspan="2">
+                    <fieldset class="small_inner_fieldset">
+                        <div id="general_stores_div"></div>
+                        <legend class="smaller_legend">General Stores</legend>
+                        <input type="button" value="Add Another Store" class="add_general" id="add_general_store_button">
+                    </fieldset>
+                </td>
+                    <td colspan="2">
                         <fieldset class="small_inner_fieldset">
-                            <div id="general_stores_div"></div>
-                            <legend class="smaller_legend">General Stores</legend>
-                            <input type="button" value="Add Another Store" class="add_general" id="add_general_store_button">
+                            <div id="taverns_div"></div>
+                            <legend class="smaller_legend">Taverns & Others</legend>
+                            <input type="button" value="Add Another Store" class="add_tavern" id="add_tavern_button">
                         </fieldset>
                     </td>
                 </tr>
@@ -145,14 +152,25 @@
         $("#add_general_store_button").on("click",function(){
             var all_general_stores=$("<div class=\"all_general_stores\" class=\"general_stores\"/>");
             var store_text_field=$("<input type=\"text\" class=\"general_stores\"/>");
-            var remove_gen_store_button=$("<button  class=\"remove_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
+            var remove_gen_store_button=$("<button  class=\"remove_gen_store_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
             remove_gen_store_button.click(function(){
                 $(this).parent().remove();
             });
             all_general_stores.append(store_text_field);
             all_general_stores.append(remove_gen_store_button);
             $("#general_stores_div").append(all_general_stores);
-        })
+        });
+        $("#add_tavern_button").on("click",function(){
+            var all_taverns_and_otheras=$("<div class=\"all_taverns_and_others\" class=\"taverns_and_others\"/>");
+            var store_text_field=$("<input type=\"text\" class=\"tavern_or_other\"/>");
+            var remove_tavern_button=$("<button  class=\"remove_tavern_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
+            remove_tavern_button.click(function() {
+                $(this).parent().remove();
+            });
+            all_taverns_and_otheras.append(store_text_field);
+            all_taverns_and_otheras.append(remove_tavern_button);
+            $("#taverns_div").append(all_taverns_and_otheras);
+        });
     });
 </script>
 </html>

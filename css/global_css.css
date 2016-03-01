@@ -13,7 +13,8 @@ nav{
 }
 nav ul{
     margin:0;
-    padding: 0;
+    padding: 2;
+    width:100%;
 
 }
 nav ul li{
@@ -44,8 +45,30 @@ ul{
     list-style-type: none;
 }
 #map {
+    padding:15px;
     height: 400px;
     width: 600px;
     background: palegoldenrod;
+
     border: groove cadetblue 12px;
+}
+fieldset{
+    display: inline-table;
+    border: solid 1px #000;
+    padding:10px;
+    clear:both;
+    margin:5px 5px;
+}
+legend {
+    padding:0px 10px;
+    background:black;
+    color:#FFF;
+    border: cadetblue;
+}
+legend.smaller_legend{
+    padding:1px 1px;
+    background:black;
+    color:#FFF;
+    font-size: 80%;
+    border: cadetblue;
 }

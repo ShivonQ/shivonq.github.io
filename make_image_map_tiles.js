@@ -15,7 +15,7 @@ function initMap() {
         //scaleControl:true,
         zoomControl:false,
         mapTypeControl:false,
-        scaleControl:true,
+        //scaleControl:true,
         mapTypeControlOptions: {
             mapTypeIds: ['archaevas']
         }
@@ -23,8 +23,8 @@ function initMap() {
     google.maps.event.addListener(map,"click",function(event){
         var clickLat = event.latLng.lat();
         var clickLon = event.latLng.lng();
-        document.getElementById("lat_display").innerHTML=clickLat.toFixed(5);
-        document.getElementById("lng_display").innerHTML=clickLon.toFixed(5);
+        document.getElementById("lat_display").value=clickLat.toFixed(5);
+        document.getElementById("lng_display").value=clickLon.toFixed(5);
     });
     var archaevasMapType=new google.maps.ImageMapType({
         getTileUrl: function(coord,zoom){
@@ -47,13 +47,6 @@ function initMap() {
         radius:3362944,
         name:'archaevas'
     });
-    //var scaleInterval = setInterval(function() {
-    //    var scale = $(".gm-style-cc:not(.gmnoprint):contains(' km')");
-    //    if (scale.length) {
-    //        scale.click();
-    //        clearInterval(scaleInterval);
-    //    }
-    //}, 100);
     map.mapTypes.set('archaevas',archaevasMapType);
     map.setMapTypeId('archaevas');
 }

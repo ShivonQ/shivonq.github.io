@@ -225,3 +225,4 @@ Kopak.longitude=158.20313;
 
 
 var all_settlements={"Weston":Weston,"The Nine Shards":The_Nine_Shards,"Shardtown":Shardtown,"Golauk":Golauk,"Chibblah":Chibblah,"Kopak":Kopak,"Tyrellia":Tyrellia};
+localStorage.setItem("all_settlement_data_JSON",JSON.stringify(all_settlements));

@@ -154,8 +154,9 @@
 
     function grab_city_data(element){
         localStorage.removeItem("City_Data");
+        var all_settlements_from_JSON=JSON.parse(localStorage.getItem("all_settlement_data_JSON"));
         var name_of_settlement=element.innerHTML;
-        var this_city=all_settlements[name_of_settlement];
+        var this_city=all_settlements_from_JSON[name_of_settlement];
 
         localStorage.setItem("City_Data",JSON.stringify(this_city));
         var url = 'display_single_city_information.html';

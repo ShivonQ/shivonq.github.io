@@ -245,7 +245,9 @@
 //
         $("#submit_form_button").on("click",function(){
             json_city_maker()
-        })
+        });
+//        TODO: Alas, I never was able to get this to work.  My selectors arent seelecting the items that get created.  It is because they aren't there when the doc.ready runs
+//       The rest of this stuff works.
         function json_city_maker(){
             var cityname=$("#city_name_box").val();
             var allegiance=$("#allegiance_dropdown option:selected").text();

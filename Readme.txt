@@ -2,20 +2,20 @@ This Wiki Page is created by Malcolm Leehan for housing the massive amount of in
 A few features that will be in it are as follows;
 
 *Custom Google Map, complete with marked locations for major cities
-    (*)Google Maps hover info
-    (*)Google Maps zoom to closer maps, for select locations.  I will list them eventually in the "Cities" page
+    ( )Google Maps hover info
+    ( )Google Maps zoom to closer maps, for select locations.  I will list them eventually in the "Cities" page
     (*)Mini Map for local view
 
 *Interactive Calendar
     (*)Hard Coded Days/Months, Each day will be associated to a "day" json object that stores relevant data
-    (*)JS enabled calendar that displays more info in little hover window, links to places/people
-    (*)JS enabled way of adding information to a days occurrences
-    (*)JS Weather & Temperature maker (Maybe almanac data)
+    (*)JS enabled calendar that opens a new window
+    ( )JS enabled way of adding information to a days occurrences, this never got completed.
+    ( )JS Weather & Temperature maker (Maybe almanac data)
 
 *Lots of good looking pages with global, local and bootstrap css elements.
 
 *STRETCH GOALS*
-    (*)User Accounts: Real user accounts to show certain info to certain accounts.
+    ( )User Accounts: Real user accounts to show certain info to certain accounts.
 
 Map Page:
    Almost works.
@@ -28,6 +28,4 @@ Calendar Page:
   Need to create JS to dynamicly bring up info box for a day on a hovering mouse, click a day and box stays til closed.
 
  Main Page:
-   Figuring out how to change color of bootstrap navbar, being uncooperative.
-   Adding some links to it to the other two pages.
-   Need to figure out how to extend the navbar, or just copy it. (Javascript constructor)
+   gave up entirely on bootstrap, none of the crap it can do worked for me, relying on jquery now.  Thats two weeks wasted fighting bootstrap.

@@ -9,13 +9,13 @@
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
             crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+    <script type="text/javascript" src="javascript_files/settlement_class.js"></script>
 
     <script type="text/javascript" src="make_image_map_tiles.js"></script>
     <link rel="stylesheet" href="css/global_css.css">
@@ -57,10 +57,10 @@
                 <table id="table_form_city_data">
                     <tr>
                         <td>City Name:</td>
-                        <td><input type="text" id="city_name_box" name="lat_display_box" size="25" maxlength="60"
+                        <td><input type="text" id="city_name_box" name="city_name_box" size="25" maxlength="60"
                                    required="required"></td>
                         <td>Allegiance:</td>
-                        <td><select name="allegiance_dropdown" required="required">
+                        <td><select name="allegiance_dropdown" required="required" id="allegiance_dropdown">
                             <option value="none"></option>
                             <option value="Scoia'tel">Scoia'tel</option>
                             <option value="Gjomatoughariil">Gjomatoughariil</option>
@@ -77,6 +77,9 @@
                         </select></td>
                     </tr>
                     <tr>
+                        <td>City Population:</td><td><input type="text" id="city_pop_text_box" size="30" maxlength="30"></td>
+                    </tr>
+                    <tr>
                         <td>Latitude:</td>
                         <td><input type="text" id="lat_display" name="lat_display_box" size="9" maxlength="15"
                                    required="required"></td>
@@ -86,7 +89,7 @@
                     </tr>
                     <tr>
                         <td>Governement Type:</td>
-                        <td><select name="gov_type_dropdown" required="required">
+                        <td><select id="gov_type_dropdown" name="gov_type_dropdown" required="required">
                             <option value="none"></option>
                             <option value="Magocracy">Magocracy</option>
                             <option value="Elected Council">Elected Council</option>
@@ -104,7 +107,7 @@
 
                         </select></td>
                         <td>Alignment:</td>
-                        <td><select name="alignement_dropdown" required="required">
+                        <td><select id="alignment_dropdown" name="alignement_dropdown" required="required">
                             <option value="none"></option>
                             <option value="Lawful Good">Lawful Good</option>
                             <option value="Neutral Good">Neutral Good</option>
@@ -179,7 +182,7 @@
                     </tr>
                     <tr>
                         <td>Sheriff or Captain</td>
-                        <td><select>
+                        <td><select id="captain_selector">
                             <option value="none"></option>
                             <option value="Sheriff">Sheriff</option>
                             <option value="Captain">Captain</option>
@@ -219,7 +222,7 @@
 
                     </tr>
                     <tr>
-                        <td colspan="4"><button onclick="json_city_maker()" id="submit_form_button">Save This City's Data:       <span class="glyphicon glyphicon-floppy-save"></span></button></td>
+                        <td colspan="4"><button id="submit_form_button">Save This City's Data:       <span class="glyphicon glyphicon-floppy-save"></span></button></td>
                     </tr>
                 </table>
             </div>
@@ -240,7 +243,50 @@
 //            }
 //        });
 //
+        $("#submit_form_button").on("click",function(){
+            json_city_maker()
+        })
+        function json_city_maker(){
+            var cityname=$("#city_name_box").val();
+            var allegiance=$("#allegiance_dropdown option:selected").text();
+            var city_pop=$("#city_pop_text_box").val();
+            var lat=$("#lat_display").val();
+            var lng=$("#lng_display").val();
+            var gov_type=$("#gov_type_dropdown option:selected").text();
+            var gov_align=$("#alignment_dropdown option:selected").text();
+            var city_desc=$("#city_description").val();
 
+            var all_gov_npcs=$("#gov_npc").val();
+            var sheriff_or_captain=$("#captain_selector option:selected").text();
+            var name_of_s_or_c=$("#guard_captain").val();
+            var combo_of_above=sheriff_or_captain+" "+name_of_s_or_c;
+//            lists and lists of items
+            var spellcasters=$("#caster").val();
+            var all_authority_figures={"Governmental":[all_gov_npcs],"Guard Captain":[combo_of_above],"Notable Spellcasters":[spellcasters]}
+
+            var gen_shops=$("#general_store").val();
+            var taverns_shops=$("#tavern_or_other").val();
+            var magic_item_shops=$("#magic_item_shop").val();
+            var weps_and_armor=$("#wep_armor_shop").val();
+            var collection_of_stores={"General Stores":[gen_shops],"Weapons & Armor":[weps_and_armor],"Magic Items":[magic_item_shops],"Other Vendors":[taverns_shops]}
+
+            var maj_imp=$("#import").val();
+            var maj_exp=$("#export").val();
+
+            var new_city_data=new Settlement_Data(parseInt(city_pop));
+            new_city_data.name=cityname;
+            new_city_data.country_or_area=allegiance;
+            new_city_data.latitude=lat;
+            new_city_data.longitude=lng;
+            new_city_data.power_center_in_community=gov_type;
+            new_city_data.power_center_alignement=gov_align;
+            new_city_data.authority_figures=all_authority_figures;
+            new_city_data.local_stores=collection_of_stores;
+            new_city_data.major_imports=maj_imp;
+            new_city_data.major_exports=maj_exp;
+            new_city_data.general_description_of_settlement=city_desc;
+
+        }
         $("#large_legend").on("click", function () {
             $(this).parent().find('.admin_wrapper').slideToggle("slow");
         });
@@ -281,7 +327,7 @@
             $("#major_exports_div").append(all_exports);
         });
         $("#add_gov_npc_button").on("click", function () {
-            var all_gov_npcs = $("<div class=\"all_gov_npcs\" class=\"gov_npc\"/>");
+            var all_gov_npcs = $("<div class=\"all_gov_npcs\" class=\"gov_npcs\"/>");
             var npc_text_field = $("<input type=\"text\" class=\"gov_npc\"/>");
             var remove_gov_button = $("<button  class=\"remove_gov_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
             remove_gov_button.click(function () {
@@ -293,7 +339,7 @@
         });
         $("#add_general_store_button").on("click", function () {
             var all_general_stores = $("<div class=\"all_general_stores\" class=\"general_stores\"/>");
-            var store_text_field = $("<input type=\"text\" class=\"general_stores\"/>");
+            var store_text_field = $("<input type=\"text\" class=\"general_store\"/>");
             var remove_gen_store_button = $("<button  class=\"remove_gen_store_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
             remove_gen_store_button.click(function () {
                 $(this).parent().remove();
@@ -304,7 +350,7 @@
         });
         $("#add_tavern_button").on("click", function () {
             var all_taverns_and_otheras = $("<div class=\"all_taverns_and_others\" class=\"taverns_and_others\"/>");
-            var store_text_field = $("<input type=\"text\" class=\"taverns_or_others\"/>");
+            var store_text_field = $("<input type=\"text\" class=\"tavern_or_other\"/>");
             var remove_tavern_button = $("<button  class=\"remove_tavern_button\"><span class=\"glyphicon glyphicon-minus\"></span></button>");
             remove_tavern_button.click(function () {
                 $(this).parent().remove();

@@ -3,11 +3,11 @@
  */
 var list_of_settlement_types={1:"Thorp",2:"Hamlet",3:"Village",4:"Small Town",5:"Large Town",6:"Small City",7:"Large City",8:"Metropolis"}
 //since at the moment this class CANNOT take information since my whole world is already hardcoded I will just be doing the selection of capital cities and towns
-var Settlement_Data=function(){
+var Settlement_Data=function(pop){
     this.name="";
     this.country_or_area="";
 
-    this.population=0;
+    this.population=pop;
     this.money_limit=0;
 
     this.power_center_in_community="";
@@ -30,10 +30,10 @@ var Settlement_Data=function(){
 };
 
 //HERE COMES SOME CITIES!!!!!!!
-var Weston=new Settlement_Data();
+var Weston=new Settlement_Data(348);
 Weston.name="Weston";
 Weston.country_or_area="The Wilds";
-Weston.population=348;
+//Weston.population=348;
 //todo add population breakdown by race when you hover over the pop #
 Weston.money_limit=1600;
 Weston.power_center_in_community="Elected Council";
@@ -74,10 +74,10 @@ Weston.local_map="City Maps/Weston_and_Environs.png";
 Weston.latitude=39.16414;
 Weston.longitude=126.56250;
 
-var The_Nine_Shards=new Settlement_Data();
+var The_Nine_Shards=new Settlement_Data(548);
 The_Nine_Shards.name="The Nine Shards";
 The_Nine_Shards.country_or_area="The Keep of The Wind";
-The_Nine_Shards.population=548;
+//The_Nine_Shards.population=548;
 The_Nine_Shards.money_limit=60000;
 The_Nine_Shards.power_center_in_community="Magocracy";
 The_Nine_Shards.power_center_alignement="Lawful Nuetral";
@@ -98,10 +98,10 @@ The_Nine_Shards.local_map="";
 The_Nine_Shards.latitude=-72.34246;
 The_Nine_Shards.longitude=19.42383;
 
-var Shardtown=new Settlement_Data();
+var Shardtown=new Settlement_Data(26895);
 Shardtown.name="Shardtown";
 Shardtown.country_or_area="The Keep of The Wind";
-Shardtown.population=26894;
+//Shardtown.population=26894;
 Shardtown.money_limit=100000;
 Shardtown.power_center_in_community="Elected Council, Subordinate to the 9";
 Shardtown.power_center_alignement=" Lawful Nuetral";
@@ -122,10 +122,10 @@ Shardtown.local_map="";
 Shardtown.latitude=-72.34246;
 Shardtown.longitude=19.42383;
 
-var Golauk=new Settlement_Data();
+var Golauk=new Settlement_Data(6857);
 Golauk.name="Golauk";
 Golauk.country_or_area="The Golauchi Alliance";
-Golauk.population=6857;
+//Golauk.population=6857;
 Golauk.money_limit=15000;
 Golauk.power_center_in_community="Elected Council";
 Golauk.power_center_alignement=" Neutral Good";
@@ -146,10 +146,10 @@ Golauk.local_map="";
 Golauk.latitude=16.63619;
 Golauk.longitude=-49.74609;
 
-var Chibblah=new Settlement_Data();
+var Chibblah=new Settlement_Data(5478);
 Chibblah.name="Chibblah";
 Chibblah.country_or_area="The Golauchi Alliance";
-Chibblah.population=5478;
+//Chibblah.population=5478;
 Chibblah.money_limit=15000;
 Chibblah.power_center_in_community="Elected Council";
 Chibblah.power_center_alignement=" Neutral Good";
@@ -170,10 +170,10 @@ Chibblah.local_map="";
 Chibblah.latitude=-62.10388;
 Chibblah.longitude=-16.87500;
 
-var Tyrellia=new Settlement_Data();
+var Tyrellia=new Settlement_Data(6654);
 Tyrellia.name="Tyrellia";
 Tyrellia.country_or_area="The Golauchi Alliance";
-Tyrellia.population=5478;
+//Tyrellia.population=6654;
 Tyrellia.money_limit=15000;
 Tyrellia.power_center_in_community="Meritocracy";
 Tyrellia.power_center_alignement=" Chaotic Good";
@@ -195,10 +195,10 @@ Tyrellia.latitude=-31.05293;
 Tyrellia.longitude=-39.28711;
 
 
-var Kopak=new Settlement_Data();
+var Kopak=new Settlement_Data(3960);
 Kopak.name="Kopak";
 Kopak.country_or_area="The Wilds";
-Kopak.population=3960;
+//Kopak.population=3960;
 Kopak.money_limit=3000;
 Kopak.power_center_in_community="Theocracy";
 Kopak.power_center_alignement=" Chaotic Good";
